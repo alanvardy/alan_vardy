@@ -18,6 +18,14 @@ defmodule AlanVardyWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/aboutme", PageController, :aboutme
+    get "/blog", PostController, :index
+    get "/blog/rss.xml", PostController, :rss
+    get "/blog/:page", PostController, :index
+    resources "/post", PostController, only: [:show]
+    resources "/tag", TagController, only: [:show]
+    get "/contact", ContactController, :new
+    post "/contact", ContactController, :create
   end
 
   # Other scopes may use custom stacks.

@@ -1,7 +1,14 @@
-    <h1 class="text-xl mt-3 mb-3">Welcome!</h1>
-    <p>
-      I am Alan Vardy, a Backend Elixir Developer out of Victoria, British Columbia, Canada.
-    </p>
-    <p>
-      I am enthusiastic in particular about helping remote teams become smooth and productive through the continous improvement of testing, tooling, and documentation.
-    </p>
+<div class="flex mt-3">
+  <div class="shrink-0">
+    <%= img_tag(Routes.static_path(@conn, "/images/wave.svg"), class: "h-12 w-12") %>
+  </div>
+  <div class="mt-4">
+    <span class="text-xl mt-12">Hi!</span>
+  </div>
+</div>
+<p class="text-m my-3">
+  My name is Alan Vardy, I am a Senior Developer living on the beautiful West Coast of Canada.
+</p>
+<p class="text-m my-3">
+  I love working remotely on backend Elixir services, and enjoy playing with Rust in my free time. I pride myself on being a high-output individual contributor who leaves code better than he finds it and actively improves the overall health of codebases.
+</p>

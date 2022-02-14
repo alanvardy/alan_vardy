@@ -1,0 +1,22 @@
+<div class="flex">
+  <div class="flex-1">
+    <h1 class="text-xl"><%= @page_title %></h1>
+  </div>
+  <div class="flex-0">
+    <%= link to: Routes.post_path(@conn, :rss) do
+      img_tag(Routes.static_path(@conn, "/images/rss.svg"), class: "h-5 w-5")
+    end %>
+  </div>
+</div>
+<div class="container bg-white p-4 rounded text-black">
+  <%= paginate(@conn, @page) %>
+  <%= for post <- @posts do %>
+    <%= render "_post.html", post: post, conn: @conn %>
+  <% end %>
+  <%= paginate(@conn, @page) %>
+</div>
+<%# <% end %>
+<div class="container bg-white p-4 rounded text-black">
+  <%# render "_tags.html", tags: @tags, conn: @conn %>
+</div>
+<%= render AlanVardyWeb.PageView, "_call_to_action.html", conn: @conn %>

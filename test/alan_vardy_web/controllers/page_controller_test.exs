@@ -3,6 +3,6 @@ defmodule AlanVardyWeb.PageControllerTest do
 
   test "GET /", %{conn: conn} do
     conn = get(conn, "/")
-    assert html_response(conn, 200) =~ "Welcome to Phoenix!"
+    assert html_response(conn, 200) =~ "My name is Alan Vardy, I am a Senior Developer"
   end
 end

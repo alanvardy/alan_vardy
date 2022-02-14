@@ -1,0 +1,7 @@
+  <%= for {name, count} <- @tags do %>
+    <p>
+    <%= link to: Routes.tag_path(@conn, :show, name) do %>
+      <%= name %>: <%= count %> <%= if count == 1, do: "post", else: "posts" %>
+    <% end %>
+    </p>
+  <% end %>
