@@ -2,6 +2,65 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* I wrap the HTML output in .blog-body */
+.blog-body {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.blog-body > p {
+  margin-top: 10px;
+}
+
+/* Headings */
+
+.blog-body > h1 {
+  font-size: 20px;
+  margin-top: 2rem;
+  color: rgb(0, 0, 0);
+}
+
+.blog-body > h3 {
+  margin-top: 2rem;
+  color: rgb(0, 0, 0);
+}
+
+/* Pictures */
+
+.blog-body > p > img {
+  /* 
+  @extend .w-50;
+  @extend .d-block;
+  @extend .mx-auto;
+  */
+  border-radius: 5px;
+  margin: 5px;
+  box-shadow: 10px 10px 5px;
+}
+
+/* Syntax Highlighting */
+
+pre {
+  background-color: rgb(36, 45, 56);
+  color: rgb(255, 255, 255);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px;
+}
+
+.kd, .k {color: rgb(219, 112, 219);}
+.nc, .p {color: rgb(250, 239, 79);}
+.sr, .se, .nf, .kn{color: rgb(146, 195, 235)}
+.s, .c {color: rgb(168, 164, 164)}
+.na, .ni {color: rgb(221, 99, 99);}
+.n, .o, .no {color: rgb(231, 231, 231)}
+.ss {color: rgb(31, 236, 226)}
+
 /* This file is for your main application CSS */
 
 /* Alerts and form errors used by phx.new */
