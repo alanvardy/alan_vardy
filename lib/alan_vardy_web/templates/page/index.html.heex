@@ -1,14 +1,21 @@
-<div class="flex mt-3">
-  <div class="shrink-0">
-    <%= img_tag(Routes.static_path(@conn, "/images/wave.svg"), class: "h-12 w-12") %>
+<div class="flex">
+  <div class="basis-3/4">
+    <div class="flex mt-3">
+      <div class="shrink-0">
+        <%= img_tag(Routes.static_path(@conn, "/images/wave.svg"), class: "h-12 w-12") %>
+      </div>
+      <div class="mt-4">
+        <span class="text-xl mt-12">Hi!</span>
+      </div>
+    </div>
+    <p class="text-m my-3 mr-5">
+      My name is Alan Vardy, I am a Senior Developer living on the beautiful West Coast of Canada.
+    </p>
+    <p class="text-m my-3 mr-5">
+      I love working remotely on backend Elixir services, and enjoy playing with Rust in my free time. I pride myself on being a high-output individual contributor who leaves code better than he finds it and actively improves the overall health of codebases.
+    </p>
   </div>
-  <div class="mt-4">
-    <span class="text-xl mt-12">Hi!</span>
+  <div class="basis-1/4">
+    <%= img_tag(Routes.static_path(@conn, "/images/alanvardy.jpg"), class: "rounded") %>
   </div>
 </div>
-<p class="text-m my-3">
-  My name is Alan Vardy, I am a Senior Developer living on the beautiful West Coast of Canada.
-</p>
-<p class="text-m my-3">
-  I love working remotely on backend Elixir services, and enjoy playing with Rust in my free time. I pride myself on being a high-output individual contributor who leaves code better than he finds it and actively improves the overall health of codebases.
-</p>
