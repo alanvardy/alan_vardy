@@ -12,8 +12,16 @@
   border-radius: 5px;
 }
 
+.blog-body > ul > li {
+  list-style: disc outside none;
+  margin-left: 2rem;
+  margin-top: 0.75rem;
+}
+
 .blog-body > p {
-  margin-top: 10px;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.75rem;
 }
 
 /* Headings */
@@ -30,15 +38,17 @@
 }
 
 /* Pictures */
-
 .blog-body > p > img {
-  /* 
-  @extend .w-50;
-  @extend .d-block;
-  @extend .mx-auto;
-  */
   border-radius: 5px;
   margin: 5px;
+}
+@media only screen and (min-width: 600px) {
+  .blog-body > p > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
 }
 
 /* Syntax Highlighting */

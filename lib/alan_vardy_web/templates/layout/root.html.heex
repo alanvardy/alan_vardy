@@ -17,6 +17,7 @@
     </header>
     <div class="m-2 md:m-5 bg-gray-50 px-5 pt-5 pb-10 rounded shadow">
       <%= @inner_content %>
+      <%= render "_footer.html", conn: @conn %>
     </div>
   </body>
 </html>

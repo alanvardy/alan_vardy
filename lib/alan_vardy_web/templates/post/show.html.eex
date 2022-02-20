@@ -2,7 +2,7 @@
   <div class="flex-1">
     <h1 class="text-xl"><%= @post.title %></h1>
   </div>
-  <div class="flex-0 text-gray-500">
+  <div class="flex-0 text-slate-500">
     <h1 class="float-right"><%= @post.date %></h1>
   </div>
 </div>

@@ -3,18 +3,18 @@
     <span class="font-semibold text-xl tracking-tight">alanvardy</span>
   </div>
   <div class="block lg:hidden">
-    <button class="flex items-center px-3 py-2 border rounded text-slate-200 border-slate-400 hover:text-white hover:border-white">
+    <button onclick="toggle()" class="flex items-center px-3 py-2 border rounded text-slate-200 border-slate-400 hover:text-white hover:border-white">
       <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
     </button>
   </div>
-  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+  <div id="menu" class="hidden md:inline-block w-full flex-grow lg:flex lg:items-center lg:w-auto">
     <div class="text-sm lg:flex-grow">
       <%= link("Home", to: Routes.page_path(@conn, :index), class: "block mt-3 mr-3 lg:inline-block lg:mt-1 text-slate-200 hover:text-white transition duration-150 border-b-2 border-transparent hover:border-white") %>
       <%= link("Blog", to: Routes.post_path(@conn, :index), class: "block mt-3 mr-3 lg:inline-block lg:mt-1 text-slate-200 hover:text-white transition duration-150 border-b-2 border-transparent hover:border-white") %>
       <%= link("About Me", to: Routes.page_path(@conn, :aboutme), class: "block mt-3 mr-3 lg:inline-block lg:mt-1 text-slate-200 hover:text-white transition duration-150 border-b-2 border-transparent hover:border-white") %>
     </div>
   </div>
-  <div class="flex-0 mt-8 md:mt-0 md:mx-5">
+  <div id="github" class="hidden md:inline-block flex-0 mt-8 md:mt-0 md:mx-5">
     <%= link to: "https://github.com/alanvardy", target: "_blank" do %>
       <svg class="fill-slate-400 hover:fill-white transition duration-150 w-7 h-7" version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 2350 2314.8">
         <path d="M1175,0C525.8,0,0,525.8,0,1175c0,552.2,378.9,1010.5,890.1,1139.7c-5.9-14.7-8.8-35.3-8.8-55.8v-199.8H734.4
@@ -27,7 +27,7 @@
       </svg>
     <% end %>
   </div>
-  <div class="flex-0 mt-8 md:mt-0 md:ml-5">
+  <div id="linkedin" class="hidden md:inline-block flex-0 mt-8 md:mt-0 md:ml-5">
     <%= link to: "https://www.linkedin.com/in/alanvardy/", target: "_blank" do %>
       <svg class="fill-slate-400 hover:fill-white transition duration-150 w-7 h-7" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 455 455" style="enable-background:new 0 0 455 455;" xml:space="preserve">
@@ -42,3 +42,13 @@
     <% end %>
   </div>
 </nav>
+<script>
+  const menu = document.getElementById('menu');
+  const github = document.getElementById('github');
+  const linkedin = document.getElementById('linkedin');
+  const toggle = () => {
+    menu.classList.toggle("hidden")
+    github.classList.toggle("hidden")
+    linkedin.classList.toggle("hidden")
+    };
+</script>

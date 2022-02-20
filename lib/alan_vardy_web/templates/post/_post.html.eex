@@ -3,7 +3,7 @@
     <div class="flex-1 text-lg text-orange">
       <h2><%= link @post.title, to: Routes.post_path(@conn, :show, @post) %></h2>
     </div>
-    <div class="flex-0 text-right text-slate-600">
+    <div class="flex-0 text-right text-slate-400">
       <%= @post.date %>
     </div>
   </div>
