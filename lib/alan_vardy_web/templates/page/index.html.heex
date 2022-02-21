@@ -5,7 +5,7 @@
         <%= img_tag(Routes.static_path(@conn, "/images/wave.svg"), class: "h-12 w-12") %>
       </div>
       <div class="mt-4">
-        <span class="text-xl mt-12">Hi!</span>
+        <span class="text-2xl mt-12">Hi!</span>
       </div>
     </div>
     <p class="text-m my-3 mr-5">
@@ -14,6 +14,27 @@
     <p class="text-m my-3 mr-5">
       I love working remotely on backend Elixir services, and enjoy playing with Rust in my free time. I pride myself on being a high-output individual contributor who leaves code better than he finds it and actively improves the overall health of codebases.
     </p>
+    <p>
+  You are invited to:
+  <ul class="border-l-4 border-orange-600 pl-4 mt-3">
+    <li>
+      <%= link to: Routes.post_path(@conn, :index) do %>
+        <%= img_tag(Routes.static_path(@conn, "/images/quill.png"), class: "h-8 w-8 inline-block my-2 mr-2") %> Read my blog
+      <% end %>
+    </li>
+    <li>
+      <%= link to: "https://github.com/alanvardy", target: "_blank" do %>
+        <%= img_tag(Routes.static_path(@conn, "/images/github.svg"), class: "h-8 w-8 inline-block my-2 mr-2") %> Take a look at my work on GitHub
+      <% end %>
+    </li>
+    <li>
+      <%= link to: "https://www.linkedin.com/in/alanvardy/", target: "_blank" do %>
+        <%= img_tag(Routes.static_path(@conn, "/images/linkedin.svg"), class: "h-8 w-8 inline-block my-2 mr-2") %> Check out my LinkedIn
+      <% end %>
+    </li>
+  </ul>
+</p>
+
   </div>
   <div class="basis-1/4">
     <%= img_tag(Routes.static_path(@conn, "/images/alanvardy.jpg"), class: "rounded") %>
