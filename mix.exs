@@ -11,7 +11,19 @@ defmodule AlanVardy.MixProject do
       start_permanent: Mix.env() == :prod,
       test_coverage: [tool: ExCoveralls],
       aliases: aliases(),
-      deps: deps()
+      dialyzer: [
+        plt_add_apps: [:ex_unit, :mix],
+        list_unused_filters: true
+      ],
+      deps: deps(),
+      preferred_cli_env: [
+        check: :test,
+        credo: :test,
+        dialyzer: :test,
+        doctor: :test,
+        "coveralls.html": :test,
+        "coveralls.json": :test
+      ]
     ]
   end
 
@@ -50,11 +62,11 @@ defmodule AlanVardy.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:tailwind, "~> 0.1", runtime: Mix.env() == :dev},
       {:postex, "~> 0.1"},
-      {:ex_check, "~> 0.12", only: :dev, runtime: false},
-      {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
-      {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false},
+      {:ex_check, "~> 0.12", only: :test, runtime: false},
+      {:credo, "~> 1.4", only: :test, runtime: false},
+      {:dialyxir, "~> 1.0", only: :test, runtime: false},
       {:excoveralls, "~> 0.13", only: :test, runtime: false},
-      {:doctor, "~> 0.18.0", only: :dev}
+      {:doctor, "~> 0.18.0", only: :test}
     ]
   end
 
