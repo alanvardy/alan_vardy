@@ -33,5 +33,8 @@ defmodule AlanVardyWeb.PageView do
     }
   ]
 
+  @type card :: %{content: String.t(), path: String.t(), title: String.t()}
+
+  @spec cards :: [card, ...]
   def cards, do: @cards
 end

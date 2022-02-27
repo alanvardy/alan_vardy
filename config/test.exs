@@ -8,8 +8,7 @@ config :alan_vardy, AlanVardyWeb.Endpoint,
   server: false
 
 # In test we don't send emails.
-config :alan_vardy, AlanVardy.Mailer,
-  adapter: Swoosh.Adapters.Test
+config :alan_vardy, AlanVardy.Mailer, adapter: Swoosh.Adapters.Test
 
 # Print only warnings and errors during test
 config :logger, level: :warn
