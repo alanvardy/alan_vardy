@@ -10,10 +10,6 @@ defmodule AlanVardyWeb.Router do
     plug :put_secure_browser_headers
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
-  end
-
   scope "/", AlanVardyWeb do
     pipe_through :browser
 
@@ -25,11 +21,6 @@ defmodule AlanVardyWeb.Router do
     resources "/post", PostController, only: [:show]
     resources "/tag", TagController, only: [:show]
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", AlanVardyWeb do
-  #   pipe_through :api
-  # end
 
   # Enables LiveDashboard only for development
   #
