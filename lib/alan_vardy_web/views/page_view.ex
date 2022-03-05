@@ -1,4 +1,5 @@
 defmodule AlanVardyWeb.PageView do
+  @moduledoc false
   use AlanVardyWeb, :view
 
   @cards [
@@ -35,6 +36,7 @@ defmodule AlanVardyWeb.PageView do
 
   @type card :: %{content: String.t(), path: String.t(), title: String.t()}
 
+  @doc "List of items to be diplayed on aboutme page"
   @spec cards :: [card, ...]
   def cards, do: @cards
 end

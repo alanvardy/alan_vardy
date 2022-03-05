@@ -1,4 +1,5 @@
 defmodule AlanVardyWeb.PostView do
+  @moduledoc false
   use AlanVardyWeb, :view
 
   alias AlanVardyWeb.Paginate

@@ -1,8 +1,10 @@
 defmodule AlanVardyWeb.PostController do
+  @moduledoc false
   use AlanVardyWeb, :controller
   alias AlanVardy.Blog
   alias AlanVardyWeb.ErrorView
 
+  @doc false
   @spec index(Plug.Conn.t(), map) :: Plug.Conn.t()
   def index(conn, %{"page" => page}) do
     assigns = [
@@ -26,6 +28,7 @@ defmodule AlanVardyWeb.PostController do
     render(conn, "index.html", assigns)
   end
 
+  @doc false
   @spec show(Plug.Conn.t(), map) :: Plug.Conn.t()
   def show(conn, %{"id" => id}) do
     case Blog.fetch_post(id) do
@@ -37,6 +40,7 @@ defmodule AlanVardyWeb.PostController do
     end
   end
 
+  @doc false
   @spec rss(Plug.Conn.t(), any) :: Plug.Conn.t()
   def rss(conn, _params) do
     assigns = [
