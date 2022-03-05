@@ -32,3 +32,5 @@ alan_vardy-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# Cypress videos
+*.mp4
