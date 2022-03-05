@@ -1,4 +1,5 @@
 defmodule AlanVardyWeb.LayoutView do
+  @moduledoc false
   use AlanVardyWeb, :view
 
   # Phoenix LiveDashboard is available only in development by default,

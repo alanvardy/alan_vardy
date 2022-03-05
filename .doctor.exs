@@ -1,7 +1,14 @@
 %Doctor.Config{
   exception_moduledoc_required: true,
   failed: false,
-  ignore_modules: [AlanVardyWeb.Telemetry, AlanVardyWeb.ErrorHelpers, AlanVardyWeb],
+  ignore_modules: [
+    AlanVardyWeb.Telemetry,
+    AlanVardyWeb.ErrorHelpers,
+    AlanVardyWeb,
+    AlanVardyWeb.Endpoint,
+    AlanVardyWeb.Router,
+    AlanVardyWeb.ErrorView
+  ],
   ignore_paths: [],
   min_module_doc_coverage: 100,
   min_module_spec_coverage: 100,
