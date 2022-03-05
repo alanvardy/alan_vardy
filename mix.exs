@@ -15,7 +15,7 @@ defmodule AlanVardy.MixProject do
         plt_add_apps: [:ex_unit, :mix],
         list_unused_filters: true,
         plt_local_path: "dialyzer/local_plt",
-        plt_core_path: "dialyzer/core_plt",
+        plt_core_path: "dialyzer/core_plt"
       ],
       deps: deps(),
       preferred_cli_env: [

@@ -1,0 +1,14 @@
+{
+  "custom_stop_words": [],
+  "coverage_options": {
+    "minimum_coverage": 0
+  },
+  "skip_files": [
+    "lib/alan_vardy/application.ex",
+    "lib/alan_vardy_web.ex",
+    "lib/alan_vardy_web/views/error_helpers.ex",
+    "lib/alan_vardy_web/endpoint.ex",
+    "test/support/*",
+    "lib/alan_vardy.ex"
+  ]
+}
