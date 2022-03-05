@@ -34,3 +34,7 @@ npm-debug.log
 
 # Cypress videos
 *.mp4
+
+# Dialyzer
+*.plt
+*.plt.hash
