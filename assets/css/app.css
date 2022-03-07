@@ -18,23 +18,49 @@
   margin-top: 0.75rem;
 }
 
+.blog-body > ol > li {
+  list-style: decimal outside none;
+  margin-left: 1rem;
+  margin-top: 0.75rem;
+
+}
+
 .blog-body > p {
   margin-top: 2rem;
   margin-bottom: 1.5rem;
   line-height: 1.75rem;
 }
 
+.blog-body > p > code {
+  font-weight: 300;
+  color:rgb(48, 47, 78);
+}
+
+.blog-body > p > a {
+  font-weight: 500;
+  color:rgb(18, 13, 158);
+}
+
 /* Headings */
 
 .blog-body > h1 {
-  font-size: 20px;
+  font-size: 1.5rem;
   margin-top: 2rem;
   color: rgb(0, 0, 0);
+  font-weight: 500;
+}
+
+.blog-body > h2 {
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  color:rgb(182, 60, 60);
+  font-weight: 500;
 }
 
 .blog-body > h3 {
-  margin-top: 2rem;
+  margin-top: 1.1rem;
   color: rgb(0, 0, 0);
+  font-weight: 500;
 }
 
 /* Pictures */
