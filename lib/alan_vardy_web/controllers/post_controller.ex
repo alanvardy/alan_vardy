@@ -32,21 +32,15 @@ defmodule AlanVardyWeb.PostController do
   @spec show(Plug.Conn.t(), map) :: Plug.Conn.t()
   def show(conn, %{"id" => id}) do
     case Blog.fetch_post(id) do
-      {:ok, post} ->
-        render(conn, "show.html", post: post, page_title: post.title)
-
-      _ ->
-        render(conn, ErrorView, "404.html")
+      {:ok, post} -> render(conn, "show.html", post: post, page_title: post.title)
+      _ -> render(conn, ErrorView, "404.html")
     end
   end
 
   @doc false
   @spec rss(Plug.Conn.t(), any) :: Plug.Conn.t()
   def rss(conn, _params) do
-    assigns = [
-      posts: Blog.list_posts(),
-      page_title: "RSS"
-    ]
+    assigns = [posts: Blog.list_posts(), page_title: "RSS"]
 
     render(conn, "rss.xml", assigns)
   end

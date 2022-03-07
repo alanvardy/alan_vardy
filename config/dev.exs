@@ -51,7 +51,8 @@ config :alan_vardy, AlanVardyWeb.Endpoint,
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
       ~r"lib/alan_vardy_web/(live|views)/.*(ex)$",
-      ~r"lib/alan_vardy_web/templates/.*(eex)$"
+      ~r"lib/alan_vardy_web/templates/.*(eex)$",
+      ~r"posts/*"
     ]
   ]
 
