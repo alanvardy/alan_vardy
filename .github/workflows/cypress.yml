@@ -3,7 +3,7 @@ name: Cypress
 on: push
 
 jobs:
-  test:
+  cypress:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
