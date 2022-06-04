@@ -34,6 +34,7 @@ npm-debug.log
 
 # Cypress videos
 *.mp4
+cypress/screenshots/
 
 # Dialyzer
 *.plt
