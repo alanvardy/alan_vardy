@@ -14,7 +14,7 @@ defmodule AlanVardyWeb.PostControllerTest do
     assert html_response(conn, 200) =~ "Blog"
     assert html_response(conn, 200) =~ "Previous"
     assert html_response(conn, 200) =~ "Next"
-    assert html_response(conn, 200) =~ "Simple belongs_to/has_many associations with Phoenix"
+    assert html_response(conn, 200) =~ "Set up Travis CI and Dependabot"
   end
 
   test "GET post", %{conn: conn} do
