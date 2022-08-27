@@ -6,7 +6,6 @@ Alan Vardy
 
 ==footer==
 
-
 ==description==
 How to make Dialyzer work better for you
 
@@ -14,6 +13,7 @@ How to make Dialyzer work better for you
 elixir,dialyzer,ecto
 
 ==body==
+
 # Dialyzer isn't universally loved
 
 I like Dialyzer, it is a tool that provides a lot more benefit than cost (for me) and once in a while spits out some _really_ gnarly puzzles. There are however many people who struggle with it and I wrote this post to communicate how I think about Dialyzer and how I use it, I hope you get some value from it!
@@ -58,11 +58,11 @@ There are not that many types, so it is easy to hold the syntax in your head aft
 
 ## Use Dialyxir
 
-[Add Dialyxir to your project](https://github.com/jeremyjh/dialyxir) to enable the `mix dialyzer` command, better error messages, better defaults etc. I consider this tool to be non-optional. 
+[Add Dialyxir to your project](https://github.com/jeremyjh/dialyxir) to enable the `mix dialyzer` command, better error messages, better defaults etc. I consider this tool to be non-optional.
 
 ## Install the Elixir LS fork
 
-If you are using Visual Studio Code then install the [vscode-elixir-ls plugin](https://marketplace.visualstudio.com/items?itemName=elixir-lsp.elixir-ls), which can also be found [on GitHub](https://github.com/elixir-lsp/vscode-elixir-ls). Note that I am linking to the actively maintained fork, and not the original repository. The original author, Jake Becker, has been mysteriously absent and I wish him all the best - and thank him for his work. This plugin will work with dialyzer, credo, the formatter and other tooling to provide linting in your browser window and is a fantastic resource. 
+If you are using Visual Studio Code then install the [vscode-elixir-ls plugin](https://marketplace.visualstudio.com/items?itemName=elixir-lsp.elixir-ls), which can also be found [on GitHub](https://github.com/elixir-lsp/vscode-elixir-ls). Note that I am linking to the actively maintained fork, and not the original repository. The original author, Jake Becker, has been mysteriously absent and I wish him all the best - and thank him for his work. This plugin will work with dialyzer, credo, the formatter and other tooling to provide linting in your browser window and is a fantastic resource.
 
 ## There are helpers you can use in IEx
 
@@ -73,7 +73,7 @@ use `i/1` and `t/1` to introspect your data
     @type element() :: any()
     @type index() :: non_neg_integer()
     @type default() :: any()
-    
+
 Find out more in the [IEx.Helpers](https://hexdocs.pm/iex/IEx.Helpers.html) module
 
 # Good habits
@@ -84,7 +84,7 @@ This one is critical. Run it all the time. Make a two or three letter bash alias
 
 ## Never write typespecs on a project where Dialyzer isn't being run
 
-This creates more problems than it solves. A bad typespec is worse than no typespec. The worst case is a library with bad typespecs, as this leaves the users of the library with a choice of whether they need to abandon their tooling or your library *(hint: they probably won't abandon their hard earned tooling)*
+This creates more problems than it solves. A bad typespec is worse than no typespec. The worst case is a library with bad typespecs, as this leaves the users of the library with a choice of whether they need to abandon their tooling or your library _(hint: they probably won't abandon their hard earned tooling)_
 
 ## Write your typespecs as you write your code
 
@@ -98,7 +98,7 @@ Dialyzer greatly benefits from updates, so make sure that you are using the late
 
 Your `mix.exs` has by default:
 
-```
+```elixir
 elixir: "~> 1.5",
 ```
 
@@ -106,7 +106,7 @@ Which is just a crime. Update it and recompile.
 
 Use asdf and a `.tool-versions` file, and specify your dependencies:
 
-```
+```bash
 elixir 1.10.1
 erlang 22.1.8
 nodejs 12.6.0
@@ -146,8 +146,6 @@ Some tips:
           has_one :preference, Preference
         end
 
-
-
 # Interpreting errors
 
 The most important clue: If you run Dialyzer frequently, then it is probably the last thing you wrote.
@@ -168,7 +166,7 @@ Very similar to the above, compare and eliminate.
 
 ## The call [function/num] will never return since it differs in the 2nd argument from the success typing arguments
 
-There is something wrong with the second argument. It might be the function, it might be the typespec, or it could be one of the functions that calls it, *or that function's typespec*
+There is something wrong with the second argument. It might be the function, it might be the typespec, or it could be one of the functions that calls it, _or that function's typespec_
 
 ## Invalid type specification for function module:function/1. The success typing is (boolean()) -> atom()
 
