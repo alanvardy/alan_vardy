@@ -12,64 +12,76 @@
   border-radius: 5px;
 }
 
-.blog-body > ul > li {
+.blog-body>ul>li {
   list-style: disc outside none;
   margin-left: 2rem;
   margin-top: 0.75rem;
 }
 
-.blog-body > ol > li {
+.blog-body>ol>li {
   list-style: decimal outside none;
   margin-left: 1rem;
   margin-top: 0.75rem;
 
 }
 
-.blog-body > p {
+.blog-body>p {
   margin-top: 2rem;
   margin-bottom: 1.5rem;
   line-height: 1.75rem;
 }
 
-.blog-body > p > code {
-  font-weight: 300;
-  color:rgb(48, 47, 78);
+.blog-body>p>code {
+  font-weight: 500;
+  padding: 0.2rem;
+  border-radius: 5px;
+  color: rgb(48, 47, 78);
+  background-color: rgba(148, 163, 184, 0.4);
 }
 
-.blog-body > p > a {
+li>code {
   font-weight: 500;
-  color:rgb(18, 13, 158);
+  padding: 0.2rem;
+  border-radius: 5px;
+  color: rgb(48, 47, 78);
+  background-color: rgba(148, 163, 184, 0.4);
+}
+
+.blog-body>p>a {
+  font-weight: 500;
+  color: rgb(18, 13, 158);
 }
 
 /* Headings */
 
-.blog-body > h1 {
+.blog-body>h1 {
   font-size: 1.5rem;
   margin-top: 2rem;
   color: rgb(0, 0, 0);
   font-weight: 500;
 }
 
-.blog-body > h2 {
+.blog-body>h2 {
   font-size: 1.25rem;
   margin-top: 2rem;
-  color:rgb(182, 60, 60);
+  color: rgb(182, 60, 60);
   font-weight: 500;
 }
 
-.blog-body > h3 {
+.blog-body>h3 {
   margin-top: 1.1rem;
   color: rgb(0, 0, 0);
   font-weight: 500;
 }
 
 /* Pictures */
-.blog-body > p > img {
+.blog-body>p>img {
   border-radius: 5px;
   margin: 5px;
 }
+
 @media only screen and (min-width: 600px) {
-  .blog-body > p > img {
+  .blog-body>p>img {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -88,13 +100,42 @@ pre {
   box-shadow: 10px 10px 5px;
 }
 
-.kd, .k {color: rgb(219, 112, 219);}
-.nc, .p {color: rgb(250, 239, 79);}
-.sr, .se, .nf, .kn{color: rgb(146, 195, 235)}
-.s, .c {color: rgb(168, 164, 164)}
-.na, .ni {color: rgb(221, 99, 99);}
-.n, .o, .no {color: rgb(231, 231, 231)}
-.ss {color: rgb(31, 236, 226)}
+.kd,
+.k {
+  color: rgb(219, 112, 219);
+}
+
+.nc,
+.p {
+  color: rgb(250, 239, 79);
+}
+
+.sr,
+.se,
+.nf,
+.kn {
+  color: rgb(146, 195, 235)
+}
+
+.s,
+.c {
+  color: rgb(168, 164, 164)
+}
+
+.na,
+.ni {
+  color: rgb(221, 99, 99);
+}
+
+.n,
+.o,
+.no {
+  color: rgb(231, 231, 231)
+}
+
+.ss {
+  color: rgb(31, 236, 226)
+}
 
 /* This file is for your main application CSS */
 
@@ -105,27 +146,33 @@ pre {
   border: 1px solid transparent;
   border-radius: 4px;
 }
+
 .alert-info {
   color: #31708f;
   background-color: #d9edf7;
   border-color: #bce8f1;
 }
+
 .alert-warning {
   color: #8a6d3b;
   background-color: #fcf8e3;
   border-color: #faebcc;
 }
+
 .alert-danger {
   color: #a94442;
   background-color: #f2dede;
   border-color: #ebccd1;
 }
+
 .alert p {
   margin-bottom: 0;
 }
+
 .alert:empty {
   display: none;
 }
+
 .invalid-feedback {
   color: #a94442;
   display: block;
@@ -143,12 +190,12 @@ pre {
   transition: opacity 1s ease-out;
 }
 
-.phx-loading{
+.phx-loading {
   cursor: wait;
 }
 
 .phx-modal {
-  opacity: 1!important;
+  opacity: 1 !important;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -156,7 +203,7 @@ pre {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .phx-modal-content {
@@ -192,28 +239,51 @@ pre {
 .fade-in {
   animation: 0.2s ease-out 0s normal forwards 1 fade-in-keys;
 }
+
 .fade-out {
   animation: 0.2s ease-out 0s normal forwards 1 fade-out-keys;
 }
 
-@keyframes fade-in-scale-keys{
-  0% { scale: 0.95; opacity: 0; }
-  100% { scale: 1.0; opacity: 1; }
+@keyframes fade-in-scale-keys {
+  0% {
+    scale: 0.95;
+    opacity: 0;
+  }
+
+  100% {
+    scale: 1.0;
+    opacity: 1;
+  }
 }
 
-@keyframes fade-out-scale-keys{
-  0% { scale: 1.0; opacity: 1; }
-  100% { scale: 0.95; opacity: 0; }
+@keyframes fade-out-scale-keys {
+  0% {
+    scale: 1.0;
+    opacity: 1;
+  }
+
+  100% {
+    scale: 0.95;
+    opacity: 0;
+  }
 }
 
-@keyframes fade-in-keys{
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+@keyframes fade-in-keys {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
-@keyframes fade-out-keys{
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+@keyframes fade-out-keys {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
-
-
