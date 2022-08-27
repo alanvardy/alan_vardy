@@ -6,7 +6,6 @@ Alan Vardy
 
 ==footer==
 
-
 ==description==
 How to find bottlenecks in your Elixir code using Erlang tools
 

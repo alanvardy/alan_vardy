@@ -43,7 +43,7 @@ And that is the only benefit.
 
 Every time the code changes from now on the manual testing will need to be performed again, and again. A teammate less familiar with the code would manually test but not know which parts are important and miss critical issues. Everyone, including future you, will be forced to slowly and painfully exercise every path of every new feature (and every new feature previously written)...
 
-### Until
+## Until
 
 One day, a person *who barely knows what your legacy code does* may find themselves forced to painstakingly write tests in order to change that code. Now your code has experienced the worst of both worlds, agonizing manual testing AND the later addition of automated tests under even more difficult circumstances.
 
