@@ -8,10 +8,10 @@
 </div>
 <div class="flex">
   <div class="flex-1">Written by <%= @post.author %></div>
-  <div>Tagged with <%= render "_small_tags.html", tags: @post.tags, conn: @conn %></div>
+  <div>Tagged with <%= render("_small_tags.html", tags: @post.tags, conn: @conn) %></div>
 </div>
 <div class="blog-body">
-  <%= raw @post.body %>
+  <%= raw(@post.body) %>
 </div>
-<%= render "_related_posts.html", posts: @post.related_posts, conn: @conn %>
-<%= render AlanVardyWeb.PageView, "_call_to_action.html", conn: @conn %>
+<%= render("_related_posts.html", posts: @post.related_posts, conn: @conn) %>
+<%= render(AlanVardyWeb.PageView, "_call_to_action.html", conn: @conn) %>
