@@ -12,6 +12,7 @@
       <%= link("Home", to: Routes.page_path(@conn, :index), class: "block mt-3 mr-3 lg:inline-block lg:mt-1 text-slate-200 hover:text-white transition duration-150 border-b-2 border-transparent hover:border-white") %>
       <%= link("Blog", to: Routes.post_path(@conn, :index), class: "block mt-3 mr-3 lg:inline-block lg:mt-1 text-slate-200 hover:text-white transition duration-150 border-b-2 border-transparent hover:border-white") %>
       <%= link("About Me", to: Routes.page_path(@conn, :aboutme), class: "block mt-3 mr-3 lg:inline-block lg:mt-1 text-slate-200 hover:text-white transition duration-150 border-b-2 border-transparent hover:border-white") %>
+      <%= link("Contact", to: Routes.contact_path(@conn, :new), class: "block mt-3 mr-3 lg:inline-block lg:mt-1 text-slate-200 hover:text-white transition duration-150 border-b-2 border-transparent hover:border-white") %>
     </div>
   </div>
   <div id="github" class="hidden md:inline-block flex-0 mt-8 md:mt-0 md:mx-5">

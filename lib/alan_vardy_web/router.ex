@@ -20,6 +20,8 @@ defmodule AlanVardyWeb.Router do
     get "/blog/:page", PostController, :index
     resources "/post", PostController, only: [:show]
     resources "/tag", TagController, only: [:show]
+    get "/contact", ContactController, :new
+    post "/contact", ContactController, :create
   end
 
   # Enables LiveDashboard only for development
