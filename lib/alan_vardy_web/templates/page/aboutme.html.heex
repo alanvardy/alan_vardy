@@ -5,7 +5,6 @@
 </p>
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
   <%= for %{title: title, content: content, path: path} <- cards() do %>
-    <%= render "_image_card.html", title: title, content: content, path: [src: path] %>
+    <%= render("_image_card.html", title: title, content: content, path: [src: path]) %>
   <% end %>
 </div>
-<%# <%= render "_call_to_action.html", conn: @conn %>
