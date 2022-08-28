@@ -66,7 +66,7 @@ defmodule AlanVardyWeb.Paginate do
 
   defp paginate_button(_conn, same, same, _pages) do
     contag(same, :a, class: "mx-1 text-center mt-1 pagination-width")
-    |> contag(:li, class: "page-item text-orange-600")
+    |> contag(:li, class: "page-item text-orange-700")
   end
 
   defp paginate_button(conn, label, _page, _pages) do

@@ -1,2 +1,11 @@
-<div class="d-flex justify-content-center mt-4 bordertop"></div>
-<div class="d-flex justify-content-center mt-3"></div>
+<div class="flex justify-center">
+  <div class="mt-10">
+    Like what you see?
+  </div>
+</div>
+<div class="flex justify-center">
+  <%= link("Contact me!",
+    to: Routes.contact_path(@conn, :new),
+    class: "bg-orange-700 hover:bg-orange-900 text-white font-bold py-2 px-4 rounded mt-3"
+  ) %>
+</div>
