@@ -1,4 +1,4 @@
-# AlanVardy
+# Alan Vardy
 
 [![Build Status](https://github.com/alanvardy/alan_vardy/workflows/Coveralls/badge.svg)](https://github.com/alanvardy/alan_vardy)
 [![Build Status](https://github.com/alanvardy/alan_vardy/workflows/Cypress/badge.svg)](https://github.com/alanvardy/alan_vardy)
@@ -9,9 +9,9 @@
 
 Personal site and blog
 
-To start your Phoenix server:
+## Run test suite
 
-* Install dependencies with `mix deps.get`
-* Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
-
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+```bash
+mix deps.get
+mix check
+```
