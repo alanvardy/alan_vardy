@@ -1,0 +1,76 @@
+<body class="bg-colors bg-cover">
+  <h1 class="text-2xl"><%= @page_title %></h1>
+  <div class="flex flex-col justify-center sm:px-6 lg:px-8">
+    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-3xl">
+      <div class="border-orange-600 border-2 py-2 sm:py-8 px-2 sm:px-6 shadow-xl rounded-lg">
+        <.form let={f} for={@changeset} action={Routes.contact_path(@conn, :create)}>
+          <div>
+            <%= label(f, :name, class: "block text-gray-700 text-xl") %>
+            <div class="mt-1 pb-4">
+              <%= text_input(f, :name,
+                placeholder: "Name",
+                class: "rounded w-full border-1 border-gray-300 text-gray-700 focus:outline-none focus:border-sky-900"
+              ) %>
+            </div>
+            <%= error_tag(f, :name) %>
+          </div>
+
+          <div>
+            <%= label(f, :email, class: "block text-gray-700text-xl") %>
+            <div class="mt-1 pb-4">
+              <%= email_input(f, :from_email,
+                placeholder: "your@email.com",
+                class: "rounded w-full border-1 border-gray-300 text-gray-700 focus:outline-none focus:border-sky-900"
+              ) %>
+            </div>
+
+            <%= error_tag(f, :from_email) %>
+          </div>
+
+          <div>
+            <%= label(f, :subject, class: "block text-gray-700 text-xl") %>
+            <div class="mt-1 pb-4">
+              <%= text_input(f, :subject,
+                placeholder: "Subject",
+                class: "rounded w-full border-1 border-gray-300 text-gray-700 focus:outline-none focus:border-sky-900"
+              ) %>
+            </div>
+            <%= error_tag(f, :subject) %>
+          </div>
+
+          <div>
+            <%= label(f, :message, class: "block text-gray-700 text-xl") %>
+            <div class="mt-1 pb-4">
+              <%= textarea(f, :message,
+                placeholder: "Lorem ipsum",
+                class: "rounded w-full border-1 border-gray-300 text-gray-700 focus:outline-none focus:border-sky-900",
+                rows: 8
+              ) %>
+            </div>
+            <%= error_tag(f, :message) %>
+          </div>
+
+          <div>
+            <%= label(f, :prove_your_humanity!, class: "block text-gray-700 text-xl") %>
+            <div class="mt-1 pb-4">
+              <%= text_input(f, :not_a_robot,
+                placeholder: "Please enter the text below",
+                class: "rounded w-full border-1 border-gray-300 text-gray-700 focus:outline-none focus:border-sky-900"
+              ) %>
+            </div>
+          </div>
+
+          <%= text_input(f, :form_id, type: "text", hidden: true, value: @id) %>
+
+          <div class="pb-8">
+            <%= display_captcha(@captcha_image) %>
+          </div>
+
+          <div>
+            <%= submit("Send", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded") %>
+          </div>
+        </.form>
+      </div>
+    </div>
+  </div>
+</body>
