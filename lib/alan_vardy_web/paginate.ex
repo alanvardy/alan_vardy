@@ -5,6 +5,8 @@ defmodule AlanVardyWeb.Paginate do
   alias AlanVardy.Blog
   alias AlanVardyWeb.Router.Helpers, as: Routes
 
+  @text_button "relative inline-flex items-center px-2 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+
   @doc "Builds the pagination selector with page numbers, next and back etc."
   @spec build(Plug.Conn.t(), pos_integer | String.t()) :: {:safe, iolist}
   def build(conn, page) when is_binary(page) do
@@ -17,7 +19,7 @@ defmodule AlanVardyWeb.Paginate do
     ([paginate_button(conn, "Previous", page, pages)] ++
        numbered_buttons(conn, page, pages) ++
        [paginate_button(conn, "Next", page, pages)])
-    |> contag(:ul, class: "flex mb-3")
+    |> contag(:div, class: "relative z-0 inline-flex rounded-md shadow-sm -space-x-px my-5")
   end
 
   # Handle the case where there is only a single page, just gives us some disabled buttons
@@ -34,47 +36,31 @@ defmodule AlanVardyWeb.Paginate do
 
   @spec paginate_button(Plug.Conn.t(), String.t() | integer, integer, integer) :: {:safe, iolist}
   defp paginate_button(_conn, "Next", page, pages) when page == pages do
-    contag("Next", :a, class: "mx-1 text-center mt-1", tabindex: "-1")
-    |> contag(:li, class: "page-item disabled")
+    contag("Next", :a, class: "#{@text_button} rounded-r-md", tabindex: "-1")
   end
 
   defp paginate_button(_conn, "Previous", 1, _pages) do
-    contag("Previous", :a, class: "mx-1 text-center mt-1", tabindex: "-1")
-    |> contag(:li, class: "page-item disabled")
+    contag("Previous", :a, class: "#{@text_button} rounded-l-md", tabindex: "-1")
   end
 
   defp paginate_button(_conn, "....", _page, _pages) do
-    contag("....", :a, class: "mx-1 text-center mt-1 pagination-width", tabindex: "-1")
-    |> contag(:li, class: "page-item disabled")
+    contag("....", :a, class: @text_button, tabindex: "-1")
   end
 
   defp paginate_button(conn, "Next", page, _pages) do
-    link("Next",
-      to: Routes.post_path(conn, :index, page + 1),
-      class: "mx-1 text-center mt-1"
-    )
-    |> contag(:li, [])
+    link("Next", to: Routes.post_path(conn, :index, page + 1), class: "#{@text_button} rounded-r-md")
   end
 
   defp paginate_button(conn, "Previous", page, _pages) do
-    link("Previous",
-      to: Routes.post_path(conn, :index, page - 1),
-      class: "mx-1 text-center mt-1"
-    )
-    |> contag(:li, [])
+    link("Previous", to: Routes.post_path(conn, :index, page - 1), class: "#{@text_button} rounded-l-md")
   end
 
   defp paginate_button(_conn, same, same, _pages) do
-    contag(same, :a, class: "mx-1 text-center mt-1 pagination-width")
-    |> contag(:li, class: "page-item text-orange-700")
+    contag(same, :a, class: "z-10 bg-orange-50 border-orange-700 text-orange-700 relative inline-flex items-center px-4 py-2 border text-sm font-medium")
   end
 
   defp paginate_button(conn, label, _page, _pages) do
-    link(label,
-      to: Routes.post_path(conn, :index, label),
-      class: "mx-1 text-center mt-1 pagination-width"
-    )
-    |> contag(:li, class: "page-item")
+    link(label, to: Routes.post_path(conn, :index, label), class: "bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium" )
   end
 
   @doc "Selects the page buttons we need for pagination"
