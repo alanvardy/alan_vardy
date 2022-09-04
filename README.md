@@ -15,3 +15,9 @@ Personal site and blog
 mix deps.get
 mix check
 ```
+
+## Force recompilation when a post isn't showing up
+
+```bash
+mix compile --force
+```
