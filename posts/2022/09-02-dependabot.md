@@ -10,7 +10,7 @@ Alan Vardy
 Make updates incremental and low-risk through automation
 
 ==tags==
-elixir github dependabot dependencies
+elixir,github,dependabot,dependencies
 
 ==body==
 

@@ -10,7 +10,7 @@ Alan Vardy
 How to find bottlenecks in your Elixir code using Erlang tools
 
 ==tags==
-profiling erlang elixir
+profiling,erlang,elixir
 
 ==body==
 So you have some Elixir code and you think it is slow, and you want to know why!

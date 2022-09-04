@@ -21,8 +21,18 @@ describe('Not logged in', function () {
     cy.contains('Next')
   })
 
+  it('Clicks on an elixir tag', function () {
+    cy.contains('elixir').click();
+    cy.contains('#elixir')
+  })
+
   it('Visits the about me page', function () {
     cy.get('[href="/aboutme"]').first().click();
     cy.contains('This is the part where I get to talk about myself!')
+  })
+
+  it('Visits the contact page', function () {
+    cy.get('[href="/contact"]').first().click();
+    cy.contains('Guilherme Stecanella')
   })
 })
