@@ -1,5 +1,5 @@
 ==title==
-Keep your Elixir Project up-to-date with Dependabot
+Keep your Elixir projects up-to-date with Dependabot
 
 ==author==
 Alan Vardy
@@ -18,25 +18,25 @@ elixir github dependabot dependencies
 
 Staying current can be challenging when there is so much to do daily. Whether critical infrastructure for a million-dollar business or an open-source library you work on on the weekend, it is difficult to find the time to update every little package in your dependency tree. The state of neglect worsens when multiple people are on a project, and the need for updating becomes a tragedy of the commons because when something is everyone's responsibility, it is also no one's.
 
-Eventually, things get so out of date that a large, risky, and heroic effort is needed to bring the codebase back into modernity. Developers grind away late at night and miss essential deadlines because the problem was allowed to metastasize into a bigger one.
+Eventually, our dependencies might get so out of date that a large, risky, and heroic effort is needed to bring the codebase back into the modern era. Brave developers will have to grind away late at night and, in severe cases, miss deadlines because the problem was allowed to metastasize.
 
-The solution is, unsurprisingly, to have automation manage the process and make incremental updates a regular part of a team's daily workflow so that every deployment is as low-risk as possible.
+An excellent solution to this problem is using automation to manage daily incremental updates. This approach ensures that every deployment is as low-risk as possible.
 
 ## Enter Dependabot
 
-Dependabot started as a private outfit and was acquired by Microsoft after they also purchased GitHub. Its primary purpose is to open PRs incrementally updating dependencies in supported languages on GitHub.
+Dependabot started as a private outfit but has since been acquired by Microsoft. Its primary purpose is to open PRs that incrementally update dependencies in supported languages on GitHub (also owned by Microsoft).
 
-After setting it up, we developers can rely on it to open PRs and tirelessly champion the update process with a single-minded purpose no biological lifeform could ever hope to match. That's somewhat useful, in my opinion :)
+Once Dependabot is set up, we developers can rely on it to open PRs and tirelessly champion the update process with a single-minded purpose no biological lifeform could ever hope to match. That's somewhat useful, in my opinion :)
 
 ![A dependabot pull request](dependabot.png "A dependabot pull request")
 
 ## What's the catch?
 
-There are 4 requirements. Three are set in stone, and the 4th a little looser.
+There are 4 requirements. Three are set in stone; the fourth is a bit looser.
 
 ### 1. GitHub
 
-This one is pretty self-explanatory: you need to be using GitHub. Microsoft is seeking to maximize the value of its product.
+This one is pretty self-explanatory: we need to use GitHub. Microsoft is seeking to maximize the value of its product.
 
 ### 2. A good test suite
 
@@ -68,7 +68,7 @@ version: 2
   interval: "daily"
 ```
 
-It will open one pull request at a time, daily, which is more than enough to keep a repository up to date if addressed daily. Make sure to add your team's name and have it rotate through reviewers.
+This will open one pull request at a time, daily, which is more than enough to keep a repository up to date. Make sure to add your team's name so that Dependabot can rotate through the team members for the reviews.
 
 [Read more about configuring Dependabot](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuring-dependabot-version-updates)
 
@@ -78,11 +78,11 @@ So Dependabot opens up the first PR. Yay! Let's talk about the next steps.
 
 ### 1. Read the changelog (and maybe the git diff)
 
-Dependabot will conveniently attach the changelog to the PR, so read it thoroughly and follow up on any items that seem squirrelly. For example, is the changelog low effort? Is it missing entirely? Then look at the git diff as well.
+Dependabot will conveniently attach the changelog to the PR. Read it thoroughly and follow up on any items that seem squirrelly. For example, is the changelog low effort? Is it missing entirely? Then look at the git diff as well.
 
 ### 2. Evaluate the library
 
-Decide how much you can trust the maintainer and their processes. Do they test? How is their test coverage? Do they do pull requests or just YOLO to main? Does their commit history look like they were drunk texting? A quick overview of the codebase might tell you a story.
+Decide how much you can trust the maintainer of the library in question and their processes. Do they test? How is their test coverage? Do they do pull requests or just YOLO to main? Does their commit history look like they were drunk texting? A quick overview of the codebase might tell you a story.
 
 ### 3. Tag in an expert
 
@@ -90,8 +90,8 @@ Did someone else write the majority of the code that uses the dependency? Is the
 
 ### 4. Consider YOUR tests and monitoring
 
-If there is a regression in the library, would it be detected before you get a bug report from your end users? Would you like to take this time to write one last unit test? Add another metric? Or make an offering at the shine of a favoured diety?
+If there is a regression in the library, would it be detected before you get a bug report from your end users? Would you like to take this time to write one last unit test? Add another metric? Or make an offering at the shrine of a favoured deity? 
 
 ### 5. Deploy and monitor as soon as possible
 
-If there is an undetected problem with the dependency and it remains undeployed, then all you have done is set a trap for the next person who pushes to production. Get it out there, monitor it, and then move on to the next thing! Of course, once in a while, something will break despite your best efforts, but at least you will know which update did it and be ready to roll back.
+If there is an undetected problem with the updated dependency and it remains undeployed, all you have done is set a trap for the next person who pushes to production. Get it out there, monitor it, and then move on to the next thing! Of course, once in a while, something will break despite your best efforts, but at least you will know which update did it and be ready to roll back.
