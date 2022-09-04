@@ -10,7 +10,7 @@ Alan Vardy
 How to speed up PostgreSQL migrations on Continuous Integration services (and locally) using database structure dumps
 
 ==tags==
-elixir ecto postgres
+elixir,ecto,postgres
 
 ==body==
 

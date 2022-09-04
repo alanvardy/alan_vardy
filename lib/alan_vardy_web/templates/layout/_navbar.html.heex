@@ -16,7 +16,10 @@
       </svg>
     </button>
   </div>
-  <div id="menu" class="mb-3 lg:mb-0 hidden md:inline-block w-full flex-grow lg:flex lg:items-center lg:w-auto">
+  <div
+    id="menu"
+    class="mb-3 lg:mb-0 hidden md:inline-block w-full flex-grow lg:flex lg:items-center lg:w-auto"
+  >
     <div class="text-sm lg:flex-grow">
       <%= for {name, route} <- [{"Home", Routes.page_path(@conn, :index)}, {"Blog", Routes.post_path(@conn, :index)}, {"About Me", Routes.page_path(@conn, :aboutme)}, {"Contact", Routes.contact_path(@conn, :new)}] do %>
         <%= link(name,

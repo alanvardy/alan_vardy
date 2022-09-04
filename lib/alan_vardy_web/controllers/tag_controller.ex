@@ -7,8 +7,8 @@ defmodule AlanVardyWeb.TagController do
   @spec show(Plug.Conn.t(), map) :: Plug.Conn.t()
   def show(conn, %{"id" => tag}) do
     posts = Blog.posts_tagged_with(tag)
-    page_title = "Posts for #{tag}"
+    page_title = "##{tag}"
 
-    render(conn, "show.html", tag: tag, posts: posts, page_title: page_title)
+    render(conn, "show.html", page: 1, tag: tag, posts: posts, page_title: page_title)
   end
 end
