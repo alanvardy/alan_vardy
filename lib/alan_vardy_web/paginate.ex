@@ -64,7 +64,7 @@ defmodule AlanVardyWeb.Paginate do
   end
 
   @doc "Selects the page buttons we need for pagination"
-  @spec filter_pages(integer, integer) :: [String.t() | Integer]
+  @spec filter_pages(integer, integer) :: [String.t() | Integer] | Range.t()
   def filter_pages(pages, _page) when pages <= 7, do: 1..pages
 
   def filter_pages(pages, page) when page in [1, 2, 3, pages - 2, pages - 1, pages] do
