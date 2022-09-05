@@ -6,12 +6,11 @@ Alan Vardy
 
 ==footer==
 
-
 ==description==
 A quick little post on how to use rsync to download your server to a local machine
 
 ==tags==
-linux,servers,dokku,digital ocean
+linux,servers,dokku,digitalocean
 
 ==body==
 Want to do make an offsite backup? Heard the horror stories of what happens when Digital Ocean cuts you off (hint: you lose access to your backups too).

@@ -6,12 +6,11 @@ Alan Vardy
 
 ==footer==
 
-
 ==description==
 Quick tip on how to use Ruby debugging in VS Code
 
 ==tags==
-ruby,rails,vs code
+ruby,rails,vscode
 
 ==body==
 Credit to [Dāvis Namsons](https://dev.to/dnamsons/ruby-debugging-in-vscode-3bkj)

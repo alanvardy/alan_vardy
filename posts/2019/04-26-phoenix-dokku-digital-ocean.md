@@ -6,12 +6,11 @@ Alan Vardy
 
 ==footer==
 
-
 ==description==
 Step by step instructions for deploying a Phoenix app to production
 
 ==tags==
-digital ocean, dokku, elixir, phoenix, postgres
+digitalocean, dokku, elixir, phoenix, postgres
 
 ==body==
 Credit to [Jon Lunsford](https://medium.com/@jonlunsford/elixir-up-and-running-with-dokku-on-digital-ocean-ce332d64224c)
@@ -244,6 +243,7 @@ phoenix_ex=phx
 ```
 
 # Automatic Migrations
+
 This one just runs `mix ecto.migrate` automatically.
 
 Create `app.json` in the root directory of your app
