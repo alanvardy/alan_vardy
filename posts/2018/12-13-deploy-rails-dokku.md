@@ -6,12 +6,11 @@ Alan Vardy
 
 ==footer==
 
-
 ==description==
 Deploy a Rails app to production with Dokku and Digital Ocean
 
 ==tags==
-ruby,rails,dokku,digital ocean
+ruby,rails,dokku,digitalocean
 
 ==body==
 Credit to [Dave Kiss](https://davekiss.com/create-your-own-heroku-clone-for-5-a-month-with-dokku/)
@@ -126,6 +125,7 @@ rails new awesomeapp --database=postgresql
 ```
 
 # Add a page and a route
+
 ```bash
 cd awesomeapp
 rails generate controller Static index
@@ -194,7 +194,6 @@ production:
 # Set up Puma correctly
 
 If you are using Rails 6, [take a look at this post](https://www.alanvardy.com/posts/38) to save yourself some headache in getting Puma up and running.
-
 
 # Add remote repository
 

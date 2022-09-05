@@ -46,11 +46,11 @@ If we cannot perform minor updates without extensive manual testing, it may be b
 
 ### 3. Effective monitoring
 
-It would be best to have good production monitoring to detect dependency issues that slip past the test suite. Once in a while regressions do make it into production despite our best efforts, and we will need that second line of defence. For example, we will want to know if that one endpoint suddenly stops serving requests correctly.
+It would be best to have good production monitoring to detect dependency issues that slip past the test suite. Once in a while regressions do make it into production despite our best efforts, and we will need that second line of defense. For example, we will want to know if that one endpoint suddenly stops serving requests correctly.
 
 ### 4. Trunk-based development (probably)
 
-Using trunk-based development will greatly speed the frequency and speed of updates reaching production. Trunk-based development centers around merging into the main branch frequently and minimizing long-lived feature branches. Ideally, all updates merged in will end up on production, one by one, as soon as possible. Then, you can revert the last change and avert disaster if something goes wrong. But, of course, if that doesn't happen, you will end up with high-risk deploys containing multiple dependency updates AND business logic changes. And it won't be long before the former gets delayed to benefit the latter, and we end up back where we started.
+Using trunk-based development will greatly speed the frequency and speed of updates reaching production. Trunk-based development centers around merging into the main branch frequently and minimizing long-lived feature branches. Ideally, all updates merged in will end up in production, one by one, as soon as possible. Then, you can revert the last change and avert disaster if something goes wrong. But, of course, if that doesn't happen, you will end up with high-risk deploys containing multiple dependency updates AND business logic changes. And it won't be long before the former gets delayed to benefit the latter, and we end up back where we started.
 
 ## Adding Dependabot
 

@@ -6,12 +6,11 @@ Alan Vardy
 
 ==footer==
 
-
 ==description==
 A dump of my current settings.json
 
 ==tags==
-vs code, ruby, elixir
+vscode, ruby, elixir
 
 ==body==
 Getting VS Code settings right is *hard*.

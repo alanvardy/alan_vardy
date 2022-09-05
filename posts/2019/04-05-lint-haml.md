@@ -6,15 +6,14 @@ Alan Vardy
 
 ==footer==
 
-
 ==description==
 Setup instructions for haml linting
 
 ==tags==
-ruby,rails,haml,vs code
+ruby,rails,haml,vscode
 
 ==body==
-Next to ERB, haml can be a bit overwhelmimg. The code is terse and (unlike ERB) indentation *really* matters. 
+Next to ERB, haml can be a bit overwhelmimg. The code is terse and (unlike ERB) indentation *really* matters.
 
 I didn't realise until recently that linting haml is an option, and want to share my current configuration.
 
