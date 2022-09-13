@@ -16,9 +16,7 @@ git,github,graphite
 
 ## The problem
 
-There is tension between large and small pull requests.
-
-I like small pull requests; I like them a lot! They are easy to review, bugfix, deploy, and migrate because the changes are much more atomic. They are less likely to conflict with the work of our teammates and are an excellent way to get feedback from your reviewers and production telemetry much earlier. They are commonly accepted as an ideal to aim towards but a hard one to consistently hit.
+I like small pull requests; I like them a lot! They are easy to review, bugfix, deploy, and migrate because the changes are much more atomic. They are less likely to conflict with the work of our teammates and are an excellent way to get feedback from our reviewers earlier. While small PRs are commonly accepted as an ideal to aim towards, they are also hard to hit consistently.
 
 That is because of reviews. We make a delightful 100-line PR, proudly mark it as ready for review, and then... wait. What can we do in the meantime? Maybe:
 
@@ -27,9 +25,9 @@ That is because of reviews. We make a delightful 100-line PR, proudly mark it as
 
 ![Merge conflict or context switch](merge.png "Merge conflict or context switch")
 
-Ok, and now we have done the next item; what now? Let's do it again. And therefore, by the end of the day, the damage is done. We will either be mentally scattered by too many different tasks or [emotionally shattered by the inevitable rebasing](https://threkk.medium.com/escaping-a-git-merge-hell-e08f37511f37). And all we wanted to do was the right thing.
+Either way, we have now completed the next item; what now? Let's do it again. And therefore, by the end of the day, the damage is done. We will either be mentally scattered by too many different tasks or [emotionally shattered by the inevitable rebasing](https://threkk.medium.com/escaping-a-git-merge-hell-e08f37511f37). And all we wanted to do was the right thing.
 
-So, we eventually wise up and start writing vast PRs, because then we can stay in the flow longer, rebase less often, and be blocked waiting on reviews less. Then, of course, we feel ashamed to have abandoned the ideal, but we had no choice, right?
+So, eventually, we'll wise up and start writing vast PRs, that allow us to stay in the flow longer, rebase less frequently, and not be blocked by pending reviews as often. But now we feel ashamed because we have abandoned the ideal. Yet,  we had no choice, right?
 
 ## Enter stacked PRs
 
@@ -48,7 +46,7 @@ branch_one
 main
 ```
 
-This workflow is possible but also very painful in many cases. For example, if commits are added or rebased in `branch_one`, `branch_two` and `branch_three` will often need to be rebased and any merge conflicts addressed. Rebasing becomes lengthy every time we alter a commit in the middle of the stack.
+This workflow is possible but also very painful in many cases. For example, if commits are added or rebased in `branch_one`, `branch_two` and `branch_three` will often need to be rebased and any merge conflicts must be addressed. Rebasing becomes lengthy every time we alter a commit in the middle of the stack.
 
 [Graphite](https://graphite.dev) makes the process of working with stacked PRs much easier. It can rebase and update a whole stack in one command, is much better at resolving rebases than the standard tooling, and works wonderfully in the terminal.
 
@@ -58,7 +56,7 @@ It posts the relationships between the PRs in the stack to GitHub as a comment s
 
 ![A Graphite comment on a pull request](graphite_comment.png "A Graphite comment on a pull request")
 
-And it can show you the relationships in the terminal and lets us navigate up and down the stack with commands like `gt up` and `gt down 3`
+Furthermore, it can show the relationships in the terminal and lets us navigate up and down the stack with commands like `gt up` and `gt down 3`
 
 And the free version is more than enough to reap the benefits.
 
@@ -66,7 +64,7 @@ And the free version is more than enough to reap the benefits.
 
 ### Less context switching and more flow
 
-Being able to stay on the same task is huge for me. A big part of developer happiness is the experience of being able to work for long stretches on challenging problems. This workflow enables us to batch up coding sessions and deployment sessions and does not leave you blocked by reviews. As a result, I felt motivated to write more code as I didn't feel like a brick wall was waiting for me.
+Being able to stay on the same task is enormous. A big part of developer happiness is the experience of being able to work for long stretches on challenging problems. This workflow enables us to batch up coding sessions and deployment sessions and does not leave us blocked by reviews. We can feel motivated to write more code as there is no brick wall waiting for us once the PR is up for review.
 
 ### More reviews
 
@@ -87,20 +85,20 @@ Each of those PRs will have to pass the continuous integration tests, so we writ
 
 ### Better planning
 
-I've found that my tickets are getting more detailed, and I am not just describing my work in smaller chunks but also deployment instructions around VMs, migrations, and monitoring. It's easy to miss these things when tickets are for larger scopes of work.
+I've found that my tickets are getting more detailed, and I am not just describing my work in smaller chunks, but I am also writing more detailed deployment instructions around VMs, migrations, and monitoring. It's easy to miss these things when tickets are for larger scopes of work.
 
 ## Considerations and drawbacks
 
 ### It helps when we are better organized
 
-Because you might be much farther ahead in the stack when a PR at the bottom of the pile gets merged, it is essential to note down actions that we need to take after merging like:
+Since you might be much farther ahead in the stack when a PR at the bottom of the pile gets merged, it is essential to note down actions that we need to take after merging like:
 
 - Deployments
 - Migrations
 - Communication with stakeholders
 - Monitoring
 
-Because otherwise, we will miss things.
+Otherwise, we will miss things.
 
 ### You will still need to rebase occasionally
 
@@ -112,7 +110,7 @@ The temptation is there to create many stacks or forks of stacks, but I recommen
 
 ### Stick to one commit per branch
 
-When I first started, I tended to push multiple commits to the same branch and then use interactive rebase to either squash or drop commits. However, rebasing this way outside of Graphite managed to break Graphite's stack metadata, so I recommend using a single commit and amending it as you go.
+When I first started, I tended to push multiple commits to the same branch and then use interactive rebase to either squash or drop commits. However, rebasing this way outside of Graphite ended up breaking Graphite's stack metadata, so I recommend using a single commit and amending it as you go.
 
 ## My code workflow
 
@@ -123,7 +121,7 @@ Some notes about tooling
 
 ### Create a ticket
 
-I like working with one ticket per PR, so thus start with a ticket that describes the changes and actions to be taken once merged.
+I like working with one ticket per PR and thus start with a ticket that describes the changes and actions to be taken once merged.
 
 ### Create a commit, branch, and WIP PR
 
@@ -170,7 +168,7 @@ gh pr ready
 
 ## Post-review care
 
-So we have a bunch of reviewed PRs; what's next? The nice thing is that we are not blocked, so that we can merge and deploy them once enough are ready to go (or we feel like deploying things).
+So we have a bunch of reviewed PRs; what's next? The nice thing is that we are not blocked. This means we can merge and deploy our reviewed PRs once enough are ready to go (or once we feel like deploying things).
 I periodically sync up remote and local and rebase off the main branch.
 
 ```bash
@@ -179,8 +177,8 @@ I periodically sync up remote and local and rebase off the main branch.
   gt stack submit --no-interactive
 ```
 
-I generally merge branches one at a time into the main branch (starting from the "bottom" of a stack rather than the "top" if you visualize the stack as sitting on top of the default branch. Incrementally from the bottom allows me to do one deployment per PR and gradually push the work into production. Of course, while doing so, we read the ticket notes so we don't forget a migration or worse.
+I generally merge branches one at a time into the main branch (starting from the "bottom" of a stack rather than the "top" if you visualize the stack as sitting on top of the default branch. Incrementally from the bottom allows me to do one deployment per PR and gradually push the work into production. Before merging, I read the ticket notes and follow the instructions past me left.
 
-## In closing
+## Conclusion
 
-I have gotten a great deal of value out of Graphite and stacked PRs over the last month or so of using it at work, and I recommend checking it out - especially if you find yourself context-switching while waiting on code review.
+I have gotten a great deal of value out of Graphite and stacked PRs over the last month or so of using it at work, and I recommend checking it out - especially if you find yourself context-switching while waiting for code reviews.
