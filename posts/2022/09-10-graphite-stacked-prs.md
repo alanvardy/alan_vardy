@@ -7,7 +7,7 @@ Alan Vardy
 ==footer==
 
 ==description==
-It's hard to keep your pull requests small when you don't know how long you will need to wait for the following review. So stack up pull requests without pain using Graphite.
+It's hard to keep your pull requests small when you don't know how long you will need to wait for a code review. Graphite allows you to stack up pull requests without pain.
 
 ==tags==
 git,github,graphite
