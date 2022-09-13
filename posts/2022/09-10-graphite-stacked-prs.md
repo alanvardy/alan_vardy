@@ -1,5 +1,5 @@
 ==title==
-Stay in the flow by stacking your PRs with Graphite.
+Stay in the flow by stacking your PRs with Graphite
 
 ==author==
 Alan Vardy
