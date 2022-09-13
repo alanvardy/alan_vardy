@@ -162,7 +162,7 @@ I recommend aliasing this too.
 
 ### Set PR as ready for review
 
-Once I am ready for review, I run the following to turn my draft PR into a regular one.
+Once I am ready for review, I run the following to turn my draft PR into a regular one:
 
 ```bash
 gh pr ready
