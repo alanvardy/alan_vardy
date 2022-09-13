@@ -295,3 +295,54 @@ pre {
     opacity: 0;
   }
 }
+
+/* Copy button start */
+
+pre {
+  position: relative;
+}
+
+pre:hover .copy-button {
+  display: block;
+}
+
+.copy-button {
+  display: none;
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.5;
+  transition: all 150ms;
+  font-size: 14px;
+  line-height: 24px;
+  color: currentColor;
+}
+
+.copy-button:hover {
+  opacity: 1;
+}
+
+.copy-button svg {
+  width: 20px;
+}
+
+.copy-button.clicked {
+  display: block;
+  opacity: 1;
+  color: #408200;
+}
+
+.copy-button.clicked::after {
+  content: "Copied! \2713";
+}
+
+.copy-button.clicked svg {
+  display: none;
+  color: currentColor;
+}
+
+/* Copy button end */
