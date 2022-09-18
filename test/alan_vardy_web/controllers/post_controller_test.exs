@@ -14,7 +14,7 @@ defmodule AlanVardyWeb.PostControllerTest do
     assert html_response(conn, 200) =~ "Blog"
     assert html_response(conn, 200) =~ "Previous"
     assert html_response(conn, 200) =~ "Next"
-    assert html_response(conn, 200) =~ "Set up Travis CI and Dependabot"
+    assert html_response(conn, 200) =~ "Install rebenv and Ruby on a Linux machine"
   end
 
   test "GET post", %{conn: conn} do
