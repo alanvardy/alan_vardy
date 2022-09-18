@@ -15,7 +15,7 @@
       I love working remotely on backend Elixir services, and enjoy playing with Rust in my free time. I pride myself on being a high-output individual contributor who leaves code better than he finds it and actively improves the overall health of codebases.
     </p>
     <p>
-      You are invited to:
+      <h2 class="text-xl mt-6 mb-3 text-slate-400">You are invited to</h2>
       <ul class="border-l-4 border-orange-700 pl-4 mt-3">
         <li>
           <%= link to: Routes.post_path(@conn, :index) do %>
@@ -44,4 +44,11 @@
   <div class="basis-1/4">
     <%= img_tag(Routes.static_path(@conn, "/images/alanvardy.jpg"), class: "rounded") %>
   </div>
+</div>
+<h2 class="text-xl mt-6 mb-3 text-slate-400">Latest Post</h2>
+<div class="md:flex">
+  <div class="basis-3/4">
+    <%= render(AlanVardyWeb.PostView, "_post.html", post: @latest_post, conn: @conn) %>
+  </div>
+  <div class="basis-1/2"></div>
 </div>
