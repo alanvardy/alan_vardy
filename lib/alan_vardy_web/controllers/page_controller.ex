@@ -2,10 +2,13 @@ defmodule AlanVardyWeb.PageController do
   @moduledoc false
   use AlanVardyWeb, :controller
 
+  alias AlanVardy.Blog
+
   @doc false
   @spec index(Plug.Conn.t(), map) :: Plug.Conn.t()
   def index(conn, _params) do
-    render(conn, "index.html", page_title: "Welcome")
+    [latest_post | _] = Blog.list_posts(1)
+    render(conn, "index.html", page_title: "Welcome", latest_post: latest_post)
   end
 
   @doc false
