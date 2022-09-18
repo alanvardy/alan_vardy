@@ -10,7 +10,7 @@
   <div class="flex-1 text-slate-500"><%= @post.author %></div>
   <div><%= render("_small_tags.html", tags: @post.tags, conn: @conn) %></div>
 </div>
-<div class="blog-body">
+<div class="blog-body prose">
   <%= raw(@post.body) %>
 </div>
 <%= render(AlanVardyWeb.PageView, "_call_to_action.html", conn: @conn) %>
