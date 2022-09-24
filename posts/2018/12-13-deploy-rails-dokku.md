@@ -193,7 +193,7 @@ production:
 
 # Set up Puma correctly
 
-If you are using Rails 6, [take a look at this post](https://www.alanvardy.com/posts/pume-server-not-loading) to save yourself some headache in getting Puma up and running.
+If you are using Rails 6, [take a look at this post](https://www.alanvardy.com/posts/puma-server-not-loading) to save yourself some headache in getting Puma up and running.
 
 # Add remote repository
 
