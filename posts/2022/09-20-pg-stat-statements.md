@@ -1,5 +1,5 @@
 ==title==
-Using pg_stat_statements to find slow queries in Postgres
+Using pg_stat_statements to find slow Postgres queries
 
 ==author==
 Alan Vardy
