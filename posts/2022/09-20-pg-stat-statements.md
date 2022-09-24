@@ -37,7 +37,7 @@ You can find out more in the [Official Postgres docs](https://www.postgresql.org
 
 If we want to use the `pg_stat_statements` view, it is a good idea to clear it first so that all the statistics we see are up to date. If we don't clear it, we will see all the stats back to the last time someone cleared it, including issues we have already fixed.
 
-Run in your Postgres client
+Run the following in your Postgres client to clear the view:
 
 ```sql
   SELECT pg_stat_statements_reset();  
