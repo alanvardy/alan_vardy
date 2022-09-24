@@ -29,7 +29,7 @@ Resolving these slow queries generally involves adding an index or rewriting som
 
 ## It needs to be enabled
 
-Postgres includes `pg_stat_statements` as an extension but does not have the functionality enabled by default. If you are working on a team, this is likely already enabled. If you are working independently, you will need to install it yourself.
+Postgres includes `pg_stat_statements` as an extension but does not have the functionality enabled by default. If you are working on a team, `pg_stat_statements` are likely already enabled. If you are working independently, you will have to do that yourself.
 
 You can find out more in the [Official Postgres docs](https://www.postgresql.org/docs/current/pgstatstatements.html)
 
