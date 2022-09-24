@@ -6,7 +6,6 @@ Alan Vardy
 
 ==footer==
 
-
 ==description==
 Set up Travis CI and Dependabot
 
@@ -14,6 +13,7 @@ Set up Travis CI and Dependabot
 ci,github,rails,ruby
 
 ==body==
+
 Tired of upgrading things? If you have a good test suite that you can trust, there are excellent options out there for automating your dependency updates. This is a very quick rundown on setting up the process with Travis CI (for running your tests) and Dependabot (for opening pull requests).
 
 This is a minimum effective setup to get you started!
@@ -77,6 +77,6 @@ update_configs:
     - "alanvardy" # change this to your github username!
 ```
 
-You can find more configuration options [here](https://dependabot.com/docs/config-file/)
+You can find more configuration options [here](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file)
 
 Push your code to master and off you go!

@@ -14,7 +14,7 @@ elixir,phoenix,absinthe,graphql,testing
 
 ==body==
 
-I am taking the [Learn-Elixir.dev](https://learn-elixir.dev/home) course right now to fill in some knowledge gaps, including [GraphQL](https://graphql.org/)
+I am taking the [Learn-Elixir.dev](https://learn-elixir.dev/) course right now to fill in some knowledge gaps, including [GraphQL](https://graphql.org/)
 
 For the purposes of this post I am not describing how to create the functionality in Absinthe, just how to test it. It is a simple resource called `user`. Inventive, right?
 

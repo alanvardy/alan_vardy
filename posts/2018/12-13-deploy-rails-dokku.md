@@ -193,7 +193,7 @@ production:
 
 # Set up Puma correctly
 
-If you are using Rails 6, [take a look at this post](https://www.alanvardy.com/posts/38) to save yourself some headache in getting Puma up and running.
+If you are using Rails 6, [take a look at this post](https://www.alanvardy.com/posts/pume-server-not-loading) to save yourself some headache in getting Puma up and running.
 
 # Add remote repository
 
@@ -261,4 +261,4 @@ dokku letsencrypt:cron-job --add
 
 # Backup your databases
 
-I wrote a shell script for this very issue. It downloads all your Postgres databases from Heroku and Dokku and uploads them (conveiently dated) to Google Drive. [Check it out](https://github.com/alanvardy/dbbackup) and let me know what you think!
+I wrote a shell script for this very issue. It downloads all your Postgres databases from Heroku and Dokku and uploads them (conveniently dated) to Google Drive. [Check it out](https://github.com/alanvardy/dbbackup) and let me know what you think!
