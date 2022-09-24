@@ -53,7 +53,7 @@ You can also query `pg_stat_statements_info` to find out when someone last clear
 
 Ordering queries by the mean is the most common way of searching for slow queries.
 
-This query finds the worst 20 by mean and eliminates any that have less than 100 calls so that we can ignore red herrings that only ran once or twice.
+The following query finds the 20 worst offenders by mean and eliminates any with less than 100 calls so that we can ignore red herrings that only ran once or twice.
 
 ```sql
 SELECT query, calls, mean_exec_time AS mean, stddev_exec_time AS standard_deviation, max_exec_time AS max
