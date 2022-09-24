@@ -81,7 +81,7 @@ Here we can see each query and the average that it took to run in milliseconds, 
 
 I sourced the next query from [this excellent Timescale post](https://www.timescale.com/blog/identify-postgresql-performance-bottlenecks-with-pg_stat_statements/)
 
-Here we can find queries that are not hitting ram. A `hit_cache_ratio` of below 98% is worth further investigation. Too much data or insufficient ram will force Postgres to go to the much slower hard drive. The solution will likely be better indexes or more ram for the machine hosting your database.
+By running it, we can find queries that are not hitting ram. A `hit_cache_ratio` of below 98% is worth further investigation. Too much data or insufficient ram will force Postgres to go to the much slower hard drive. The solution will likely be better indexes or more ram for the machine hosting your database.
 
 ```sql
 SELECT calls,
