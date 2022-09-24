@@ -23,7 +23,7 @@ Slow queries can be one of the worst things to happen to a web application becau
 
 To determine which queries are slower than others and identify potential problems, we can use a view in Postgres called `pg_stat_statements`. This view is an aggregate of statistics around the queries (and mutations) and helps us identify how much stress these operations put on the database.
 
-We recommend periodically checking the `pg_stat_statements` view for slow queries to catch them before they become a problem, and it is also a way to find them in a hurry. We may even find that optimizing queries can reduce the costs of running the database as fewer resources may need to be assigned to it afterward, or it may not need to have more resources allocated in the future. The database can be the most expensive part of the system to scale; thus, this effort is frequently worth it.
+I recommend periodically checking the `pg_stat_statements` view for slow queries to catch them before they become a problem, and it is also a way to find them in a hurry. We may even find that optimizing queries can reduce the costs of running the database as fewer resources may need to be assigned to it afterward, or it may not need to have more resources allocated in the future. The database can be the part of the system that is most expensive to scale; thus, this effort is frequently worth it.
 
 Resolving these slow queries generally involves adding an index or rewriting some SQL, but those next steps are to be covered in a later post.
 
