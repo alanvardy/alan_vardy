@@ -28,7 +28,7 @@ Install bundler
 gem install bundler
 ```
 
-[Create new repo on Github with readme](https://help.github.com/articles/create-a-repo/)
+[Create new repo on Github with readme](https://docs.github.com/en/get-started/quickstart/create-a-repo)
 
 Clone down to computer
 
