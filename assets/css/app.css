@@ -48,6 +48,30 @@ ol li::before {
   line-height: 1.75rem;
 }
 
+blockquote {
+  display: block;
+  font: 1.1rem italic Times, serif;
+  padding: 1rem;
+  background-color: rgb(243, 233, 233);
+  text-indent: 23px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 90%;
+  border-radius: 5px;
+  box-shadow: 6px 7px 10px 0px rgba(0, 0, 0, 0.18);
+  -webkit-box-shadow: 6px 7px 10px 0px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: 6px 7px 10px 0px rgba(0, 0, 0, 0.18);
+}
+
+@media only screen and (min-width: 600px) {
+  blockquote {
+    width: 50%;
+  }
+}
+
 .blog-body>p>code {
   font-weight: 500;
   padding: 0.2rem;
