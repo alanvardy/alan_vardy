@@ -2,7 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* I wrap the HTML output in .blog-body */
+/* v1 */
 .blog-body {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
