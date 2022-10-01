@@ -7,7 +7,7 @@ Alan Vardy
 ==footer==
 
 ==description==
-It is difficult staying on an even emotional keel when working on code in a team. Check out some thoughts that helped me along the way.
+It is difficult to stay on an even emotional keel when working on code in a team. Check out some thoughts that helped me along the way.
 
 ==tags==
 teams
@@ -21,7 +21,7 @@ Programming is one of the best and worst things I do. It can leave me satisfied 
 
 I spent the better part of a year in Afghanistan a lifetime ago, searching for IEDs and occasionally being shot at. Of course, deploying to a conflict zone was full of excitement and stress, but it was different. I was scared at times, even grim, but at no time did I ever doubt my sanity in the way I have when I am troubleshooting multiple overlapping issues in a production environment.
 
-Collaborating with a team can also be challenging, giving and accepting criticism and learning to compromise. Even if there are no interpersonal issues, communicating with other humans and reaching a consensus takes effort. Many programmers did not enter the profession due to a burning desire to work with people, so I think it is ironic that the human element is so present and difficult when developing software. I want to express a few things I have learned so far, and I hope I will learn many more as time goes on. I write this blog to my past self as much as anyone else.
+Collaborating with a team can also be challenging. It involves giving and accepting criticism and learning to compromise. Even if there are no interpersonal issues, communicating with other humans and reaching a consensus takes effort. Many programmers did not enter the profession due to a burning desire to work with people, so I think it is ironic that the human element is so present and difficult when developing software. I want to express a few things I have learned so far, and I hope I will learn many more as time goes on. I write this blog to my past self as much as anyone else.
 
 ## It's OK if you are wrong
 
@@ -47,7 +47,7 @@ Text communication on remote teams is problematic because it strips out all the 
 
 When receiving words that offend, give the other party the benefit of the doubt and ask for clarification. Either you will find out that your perception did not align with their intention, or you will force them to sit in their negativity a wee bit longer. Don't forget that communicating is a skill; they might be on the learning path too.
 
-The lesson goes both ways as well. Overcommunicate emotion a little, and use emoticons when appropriate. Criticize code and compliment the author. Thank people and appreciate them publically when they make your life easier. Building up a bank of positivity will pay dividends next time you accidentally misstep at the keyboard.
+For our part, make sure to overcommunicate emotion a little, and use emoticons when appropriate. Criticize code and compliment the author. Thank people and appreciate them publically when they make your life easier. Building up a bank of positivity will pay dividends next time you accidentally misstep at the keyboard.
 
 ## Your code is not precious, and perfection is not the goal
 
