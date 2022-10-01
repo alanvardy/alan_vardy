@@ -77,7 +77,7 @@ Attempting to change people is frustrating and pointless. Most of the time, you 
 
 ## Be kind and thank people
 
-It's easy to forget that people on their journeys surround us. Take the time to thank people when they do something good. It builds goodwill and encourages good behaviour. It costs nothing and just generally feels good. It practices gratitude which is enormous for preventing negative thinking. I think it might benefit the giver even more than the receiver.
+It's easy to forget that people on their journeys surround us. Take the time to thank people when they do something good. It builds goodwill and encourages good behaviour. It costs nothing and just generally feels good. It's a great way to practice gratitude, which is enormous for preventing negative thinking. I think it might benefit the giver even more than the receiver.
 
 ## Finally, enjoy the journey
 
