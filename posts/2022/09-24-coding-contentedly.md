@@ -81,4 +81,4 @@ It's easy to forget that people on their journeys surround us. Take the time to 
 
 ## Finally, enjoy the journey
 
-Working as a software developer can be an excellent way to drive personal growth. It forces us to be both cerebral while interacting with computers and empathetic when working with others. The above is by no means a complete list, but they have helped me thrive in situations that would have otherwise left me miserable. With the right mindset, we can build character as we collect a paycheque.
+Working as a software developer can be an excellent way to drive personal growth. It forces us to be both cerebral while interacting with computers and empathetic when working with others. The above is by no means a complete list, but it has helped me thrive in situations that would have otherwise left me miserable. With the right mindset, we can build character as we collect a paycheque.
