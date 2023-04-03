@@ -27,6 +27,11 @@ defmodule AlanVardyWeb.PostControllerTest do
     assert html_response(conn, 200) =~ "Without further ado"
   end
 
+  test "handles not found", %{conn: conn} do
+    conn = get(conn, Routes.post_path(conn, :show, "bad-route"))
+    assert html_response(conn, 200) =~ "Not Found"
+  end
+
   test "GET rss", %{conn: conn} do
     conn = get(conn, Routes.post_path(conn, :rss))
     assert response(conn, 200) =~ "<title>Alan Vardy's Blog</title>"

@@ -48,19 +48,32 @@ defmodule AlanVardyWeb.Paginate do
   end
 
   defp paginate_button(conn, "Next", page, _pages) do
-    link("Next", to: Routes.post_path(conn, :index, page + 1), class: "#{@text_button} rounded-r-md")
+    link("Next",
+      to: Routes.post_path(conn, :index, page + 1),
+      class: "#{@text_button} rounded-r-md"
+    )
   end
 
   defp paginate_button(conn, "Previous", page, _pages) do
-    link("Previous", to: Routes.post_path(conn, :index, page - 1), class: "#{@text_button} rounded-l-md")
+    link("Previous",
+      to: Routes.post_path(conn, :index, page - 1),
+      class: "#{@text_button} rounded-l-md"
+    )
   end
 
   defp paginate_button(_conn, same, same, _pages) do
-    contag(same, :a, class: "z-10 bg-orange-50 border-orange-700 text-orange-700 relative inline-flex items-center px-4 py-2 border text-sm font-medium")
+    contag(same, :a,
+      class:
+        "z-10 bg-orange-50 border-orange-700 text-orange-700 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+    )
   end
 
   defp paginate_button(conn, label, _page, _pages) do
-    link(label, to: Routes.post_path(conn, :index, label), class: "bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium" )
+    link(label,
+      to: Routes.post_path(conn, :index, label),
+      class:
+        "bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+    )
   end
 
   @doc "Selects the page buttons we need for pagination"
