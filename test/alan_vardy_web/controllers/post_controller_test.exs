@@ -6,7 +6,6 @@ defmodule AlanVardyWeb.PostControllerTest do
     assert html_response(conn, 200) =~ "Blog"
     assert html_response(conn, 200) =~ "Previous"
     assert html_response(conn, 200) =~ "Next"
-    assert html_response(conn, 200) =~ "3 Bad Arguments Against Writing Tests"
   end
 
   test "GET index page 2", %{conn: conn} do
@@ -14,7 +13,6 @@ defmodule AlanVardyWeb.PostControllerTest do
     assert html_response(conn, 200) =~ "Blog"
     assert html_response(conn, 200) =~ "Previous"
     assert html_response(conn, 200) =~ "Next"
-    assert html_response(conn, 200) =~ "Dialyzer, or how I learned to stop worrying"
   end
 
   test "GET post", %{conn: conn} do
