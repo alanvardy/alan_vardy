@@ -1,0 +1,109 @@
+name: CI
+
+on: push
+
+jobs:
+  coveralls:
+    name: Coveralls
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: |
+            deps
+            _build
+          key: ${{ runner.os }}-mix-coveralls-${{ hashFiles('**/mix.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-mix-coveralls-
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: 25.3
+          elixir-version: 1.14.4
+      - run: mix deps.get
+      - run: MIX_ENV=test mix coveralls.json
+      - name: Upload to codecov.io
+        uses: codecov/codecov-action@v1
+
+  credo:
+    name: Credo
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: |
+            deps
+            _build
+          key: ${{ runner.os }}-mix-coveralls-${{ hashFiles('**/mix.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-mix-coveralls-
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: 25.3
+          elixir-version: 1.14.4
+      - run: mix deps.get
+      - run: MIX_ENV=test mix credo
+
+  cypress:
+    name: Cypress
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: |
+            deps
+            _build
+          key: ${{ runner.os }}-mix-coveralls-${{ hashFiles('**/mix.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-mix-coveralls-
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: 25.0
+          elixir-version: 1.14.0
+      - run: mix deps.get
+      - run: mix compile
+      - run: mix assets.deploy
+      - run: ./cypress-run.sh
+
+  dialyzer:
+    name: Dialyzer
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: |
+            deps
+            _build
+            dialyzer
+          key: ${{ runner.os }}-mix-dialyzer-${{ hashFiles('**/mix.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-mix-dialyzer-
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: 25.3
+          elixir-version: 1.14.4
+      - run: mix deps.get
+      - run: MIX_ENV=test mix dialyzer
+
+  doctor:
+    name: Doctor
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: |
+            deps
+            _build
+          key: ${{ runner.os }}-mix-coveralls-${{ hashFiles('**/mix.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-mix-coveralls-
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: 25.3
+          elixir-version: 1.14.4
+      - run: mix deps.get
+      - run: MIX_ENV=test mix doctor
