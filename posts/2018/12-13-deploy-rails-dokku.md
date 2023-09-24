@@ -13,7 +13,6 @@ Deploy a Rails app to production with Dokku and Digital Ocean
 ruby,rails,dokku,digitalocean
 
 ==body==
-Credit to [Dave Kiss](https://davekiss.com/create-your-own-heroku-clone-for-5-a-month-with-dokku/)
 
 # Buy a domain name
 
