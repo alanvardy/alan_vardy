@@ -18,8 +18,8 @@ ARG RUNNER_IMAGE="debian:bullseye-20230612-slim"
 FROM ${BUILDER_IMAGE} as builder
 
 # install build dependencies
-RUN apt-get update -y && apt-get install -y build-essential git\
-  && apt-get clean && rm -f /var/lib/apt/lists/*_* && curl https://sh.rustup.rs -sSf | sh -s -- -y
+RUN apt-get update -y && apt-get install -y build-essential git rustc\
+  && apt-get clean && rm -f /var/lib/apt/lists/*_*
 
 # prepare build dir
 WORKDIR /app
