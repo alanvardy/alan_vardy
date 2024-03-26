@@ -21,3 +21,9 @@ mix check
 ```bash
 mix compile --force
 ```
+
+## Deploy
+
+```
+  
+```

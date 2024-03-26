@@ -1,33 +1,21 @@
 name: CI
-
-on: push
+on: [push, pull_request]
 
 jobs:
-  coveralls:
-    name: Coveralls
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v2
-        with:
-          path: |
-            deps
-            _build
-          key: ${{ runner.os }}-mix-coveralls-${{ hashFiles('**/mix.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-mix-coveralls-
-      - uses: erlef/setup-beam@v1
-        with:
-          otp-version: 25.3
-          elixir-version: 1.14.4
-      - run: mix deps.get
-      - run: MIX_ENV=test mix coveralls.json
-      - name: Upload to codecov.io
-        uses: codecov/codecov-action@v1
-
   credo:
     name: Credo
     runs-on: ubuntu-latest
+    services:
+      db:
+        image: postgres:14.2
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        env:
+          POSTGRES_PASSWORD: postgres
     steps:
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
@@ -35,19 +23,61 @@ jobs:
           path: |
             deps
             _build
-          key: ${{ runner.os }}-mix-coveralls-${{ hashFiles('**/mix.lock') }}
+          key: ${{ runner.os }}-credo-${{ hashFiles('**/mix.lock') }}
           restore-keys: |
-            ${{ runner.os }}-mix-coveralls-
+            ${{ runner.os }}-credo-
       - uses: erlef/setup-beam@v1
         with:
-          otp-version: 25.3
-          elixir-version: 1.14.4
+          otp-version: 26.0.2
+          elixir-version: 1.15.5
       - run: mix deps.get
-      - run: MIX_ENV=test mix credo
+      - run: mix credo --strict
+
+  doctor:
+    name: Doctor
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: postgres:14.2
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        env:
+          POSTGRES_PASSWORD: postgres
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: |
+            deps
+            _build
+          key: ${{ runner.os }}-credo-${{ hashFiles('**/mix.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-credo-
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: 26.0.2
+          elixir-version: 1.15.5
+      - run: mix deps.get
+      - run: mix doctor
 
   cypress:
     name: Cypress
     runs-on: ubuntu-latest
+    services:
+      db:
+        image: postgres:14.2
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        env:
+          POSTGRES_PASSWORD: postgres
     steps:
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
@@ -55,21 +85,31 @@ jobs:
           path: |
             deps
             _build
-          key: ${{ runner.os }}-mix-coveralls-${{ hashFiles('**/mix.lock') }}
+          key: ${{ runner.os }}-cypress-${{ hashFiles('**/mix.lock') }}
           restore-keys: |
-            ${{ runner.os }}-mix-coveralls-
+            ${{ runner.os }}-cypress-
       - uses: erlef/setup-beam@v1
         with:
-          otp-version: 25.0
-          elixir-version: 1.14.0
+          otp-version: 26.0.2
+          elixir-version: 1.15.5
       - run: mix deps.get
-      - run: mix compile
       - run: mix assets.deploy
-      - run: ./cypress-run.sh
+      - run: mix cypress.run
 
   dialyzer:
     name: Dialyzer
     runs-on: ubuntu-latest
+    services:
+      db:
+        image: postgres:14.2
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        env:
+          POSTGRES_PASSWORD: postgres
     steps:
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
@@ -78,19 +118,30 @@ jobs:
             deps
             _build
             dialyzer
-          key: ${{ runner.os }}-mix-dialyzer-${{ hashFiles('**/mix.lock') }}
+          key: ${{ runner.os }}-dialyzer-${{ hashFiles('**/mix.lock') }}
           restore-keys: |
-            ${{ runner.os }}-mix-dialyzer-
+            ${{ runner.os }}-dialyzer-
       - uses: erlef/setup-beam@v1
         with:
-          otp-version: 25.3
-          elixir-version: 1.14.4
+          otp-version: 26.0.2
+          elixir-version: 1.15.5
       - run: mix deps.get
-      - run: MIX_ENV=test mix dialyzer
+      - run: mix dialyzer
 
-  doctor:
-    name: Doctor
+  coveralls:
+    name: Coveralls
     runs-on: ubuntu-latest
+    services:
+      db:
+        image: postgres:14.2
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        env:
+          POSTGRES_PASSWORD: postgres
     steps:
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
@@ -98,12 +149,26 @@ jobs:
           path: |
             deps
             _build
-          key: ${{ runner.os }}-mix-coveralls-${{ hashFiles('**/mix.lock') }}
+          key: ${{ runner.os }}-coveralls-${{ hashFiles('**/mix.lock') }}
           restore-keys: |
-            ${{ runner.os }}-mix-coveralls-
+            ${{ runner.os }}-coveralls-
       - uses: erlef/setup-beam@v1
         with:
-          otp-version: 25.3
-          elixir-version: 1.14.4
+          otp-version: 26.0.2
+          elixir-version: 1.15.5
       - run: mix deps.get
-      - run: MIX_ENV=test mix doctor
+      - run: mix coveralls.json
+      - name: Upload to codecov.io
+        uses: codecov/codecov-action@v1
+
+  auto-merge:
+    name: Auto-merge
+    if: ${{ github.event_name == 'pull_request'}}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ahmadnassri/action-dependabot-auto-merge@v2
+        with:
+          target: minor
+          github-token: ${{ secrets.MYTOKEN}} 
+

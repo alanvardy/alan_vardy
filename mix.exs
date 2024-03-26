@@ -4,8 +4,8 @@ defmodule AlanVardy.MixProject do
   def project do
     [
       app: :alan_vardy,
-      version: "0.1.0",
-      elixir: "~> 1.13",
+      version: "0.1.1",
+      elixir: "~> 1.15",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: Mix.compilers(),
       start_permanent: Mix.env() == :prod,
@@ -65,9 +65,9 @@ defmodule AlanVardy.MixProject do
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:tailwind, "~> 0.1", runtime: Mix.env() == :dev},
+      {:tailwind, "~> 0.2", runtime: Mix.env() == :dev},
       {:postex, "~> 0.1"},
-      {:ex_robo_cop, "~> 0.1", github: "corneliakelinske/ex_robo_cop", branch: "update_dependencies"},
+      {:ex_robo_cop, "~> 0.1"},
       {:hackney, "~> 1.9"},
       {:ex_check, "~> 0.12", only: :test, runtime: false},
       {:credo, "~> 1.4", only: :test, runtime: false},
@@ -86,7 +86,7 @@ defmodule AlanVardy.MixProject do
   defp aliases do
     [
       setup: ["deps.get"],
-      "assets.deploy": ["esbuild default --minify", "phx.digest"]
+      "assets.deploy": ["tailwind default --minify", "esbuild default --minify", "phx.digest"]
     ]
   end
 end

@@ -11,7 +11,7 @@ config :alan_vardy, AlanVardyWeb.Endpoint,
 config :alan_vardy, AlanVardy.Mailer, adapter: Swoosh.Adapters.Test
 
 # Print only warnings and errors during test
-config :logger, level: :warn
+config :logger, level: :warning
 
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime
