@@ -73,7 +73,7 @@ defmodule AlanVardy.MixProject do
       {:credo, "~> 1.4", only: :test, runtime: false},
       {:dialyxir, "~> 1.0", only: :test, runtime: false},
       {:excoveralls, "~> 0.13", only: :test, runtime: false},
-      {:doctor, "~> 0.21.0", only: :test}
+      {:doctor, "~> 0.22.0", only: :test}
     ]
   end
 
