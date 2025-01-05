@@ -20,5 +20,5 @@ defmodule AlanVardyWeb.Gettext do
 
   See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext, otp_app: :alan_vardy
+  use Gettext.Backend, otp_app: :alan_vardy
 end

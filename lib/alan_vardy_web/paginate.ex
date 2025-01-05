@@ -1,6 +1,6 @@
 defmodule AlanVardyWeb.Paginate do
   @moduledoc "Builds the pagination HTML for blog posts"
-  use Phoenix.HTML
+  use PhoenixHTMLHelpers
 
   alias AlanVardy.Blog
   alias AlanVardyWeb.Router.Helpers, as: Routes
