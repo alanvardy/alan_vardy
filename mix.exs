@@ -51,11 +51,12 @@ defmodule AlanVardy.MixProject do
     [
       {:phoenix, "~> 1.7.2"},
       {:phoenix_view, "~> 2.0"},
-      {:phoenix_html, "~> 3.0"},
+      {:phoenix_html, "~> 4.0"},
+      {:phoenix_html_helpers, "~> 1.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_live_view, "~> 0.18.3"},
+      {:phoenix_live_view, "~> 1.0"},
       {:floki, ">= 0.30.0", only: :test},
-      {:phoenix_live_dashboard, "~> 0.7.2"},
+      {:phoenix_live_dashboard, "~> 0.8"},
       {:ecto, "~> 3.5"},
       {:phoenix_ecto, "~> 4.0"},
       {:esbuild, "~> 0.3", runtime: Mix.env() == :dev},
@@ -73,7 +74,7 @@ defmodule AlanVardy.MixProject do
       {:credo, "~> 1.4", only: :test, runtime: false},
       {:dialyxir, "~> 1.0", only: :test, runtime: false},
       {:excoveralls, "~> 0.13", only: :test, runtime: false},
-      {:doctor, "~> 0.22.0", only: :test}
+      {:doctor, "~> 0.22", only: :test}
     ]
   end
 
