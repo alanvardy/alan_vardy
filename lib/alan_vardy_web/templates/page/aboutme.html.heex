@@ -1,11 +1,11 @@
-<h1 class="text-3xl"><%= @page_title %></h1>
+<h1 class="text-3xl">{@page_title}</h1>
 <p class="my-3">
   This is the part where I get to talk about myself! Other than pure self-indulgence,
   I am creating this page so that you can understand a little bit more about who I am and where I come from.
 </p>
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
   <%= for %{title: title, content: content, path: path} <- cards() do %>
-    <%= render("_image_card.html", title: title, content: content, path: [src: path]) %>
+    {render("_image_card.html", title: title, content: content, path: [src: path])}
   <% end %>
 </div>
-<%= render("_call_to_action.html", conn: @conn) %>
+{render("_call_to_action.html", conn: @conn)}

@@ -8,8 +8,7 @@ defmodule AlanVardy.Application do
     children = [
       AlanVardyWeb.Telemetry,
       {Phoenix.PubSub, name: AlanVardy.PubSub},
-      AlanVardyWeb.Endpoint,
-      ExRoboCop.start()
+      AlanVardyWeb.Endpoint
     ]
 
     opts = [strategy: :one_for_one, name: AlanVardy.Supervisor]

@@ -1,6 +1,6 @@
 <div class="flex">
   <div class="flex-1">
-    <h1 class="text-3xl"><%= @page_title %></h1>
+    <h1 class="text-3xl">{@page_title}</h1>
   </div>
   <div class="flex-0">
     <%= link to: Routes.post_path(@conn, :rss) do %>
@@ -26,8 +26,8 @@
 </div>
 <div class="container bg-white p-4 rounded text-black">
   <%= for post <- @posts do %>
-    <%= render(AlanVardyWeb.PostView, "_post.html", post: post, conn: @conn) %>
+    {render(AlanVardyWeb.PostView, "_post.html", post: post, conn: @conn)}
   <% end %>
 </div>
 <div class="container bg-white p-4 rounded text-black"></div>
-<%= render(AlanVardyWeb.PageView, "_call_to_action.html", conn: @conn) %>
+{render(AlanVardyWeb.PageView, "_call_to_action.html", conn: @conn)}

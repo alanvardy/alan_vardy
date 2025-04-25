@@ -1,7 +1,7 @@
 <%= for {name, count} <- @tags do %>
   <p>
     <%= link to: "#" do %>
-      <%= name %>: <%= count %> <%= if count == 1, do: "post", else: "posts" %>
+      {name}: {count} {if count == 1, do: "post", else: "posts"}
     <% end %>
   </p>
 <% end %>

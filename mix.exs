@@ -68,7 +68,6 @@ defmodule AlanVardy.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:tailwind, "~> 0.1", runtime: Mix.env() == :dev},
       {:postex, "~> 0.1"},
-      {:ex_robo_cop, "~> 0.1.4"},
       {:hackney, "~> 1.9"},
       {:ex_check, "~> 0.12", only: :test, runtime: false},
       {:credo, "~> 1.4", only: :test, runtime: false},
