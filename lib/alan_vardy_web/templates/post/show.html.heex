@@ -1,17 +1,17 @@
 <div class="flex">
   <div class="flex-1 mb-3">
-    <h1 class="text-2xl"><%= @post.title %></h1>
+    <h1 class="text-2xl">{@post.title}</h1>
   </div>
   <div class="flex-0 text-slate-500">
-    <h1 class="float-right"><%= @post.date %></h1>
+    <h1 class="float-right">{@post.date}</h1>
   </div>
 </div>
 <div class="flex">
-  <div class="flex-1 text-slate-500"><%= @post.author %></div>
-  <div><%= render("_small_tags.html", tags: @post.tags, conn: @conn) %></div>
+  <div class="flex-1 text-slate-500">{@post.author}</div>
+  <div>{render("_small_tags.html", tags: @post.tags, conn: @conn)}</div>
 </div>
 <div class="blog-body prose">
-  <%= raw(@post.body) %>
+  {raw(@post.body)}
 </div>
-<%= render(AlanVardyWeb.PageView, "_call_to_action.html", conn: @conn) %>
-<%= render("_related_posts.html", posts: @post.related_posts, conn: @conn) %>
+{render(AlanVardyWeb.PageView, "_call_to_action.html", conn: @conn)}
+{render("_related_posts.html", posts: @post.related_posts, conn: @conn)}

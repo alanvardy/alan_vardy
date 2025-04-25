@@ -2,7 +2,7 @@
   <div class="basis-3/4">
     <div class="flex mt-3">
       <div class="shrink-0">
-        <%= img_tag(Routes.static_path(@conn, "/images/wave.svg"), class: "h-12 w-12") %>
+        {img_tag(Routes.static_path(@conn, "/images/wave.svg"), class: "h-12 w-12")}
       </div>
       <div class="mt-4">
         <span class="text-3xl mt-12">Hi!</span>
@@ -19,36 +19,36 @@
       <ul class="border-l-4 border-orange-700 pl-4 mt-3">
         <li>
           <%= link to: Routes.post_path(@conn, :index) do %>
-            <%= img_tag(Routes.static_path(@conn, "/images/quill.png"),
+            {img_tag(Routes.static_path(@conn, "/images/quill.png"),
               class: "h-8 w-8 inline-block my-2 mr-2"
-            ) %> Read my blog
+            )} Read my blog
           <% end %>
         </li>
         <li>
           <%= link to: "https://github.com/alanvardy", target: "_blank" do %>
-            <%= img_tag(Routes.static_path(@conn, "/images/github.svg"),
+            {img_tag(Routes.static_path(@conn, "/images/github.svg"),
               class: "h-8 w-8 inline-block my-2 mr-2"
-            ) %> Take a look at my work on GitHub
+            )} Take a look at my work on GitHub
           <% end %>
         </li>
         <li>
           <%= link to: "https://www.linkedin.com/in/alanvardy/", target: "_blank" do %>
-            <%= img_tag(Routes.static_path(@conn, "/images/linkedin.svg"),
+            {img_tag(Routes.static_path(@conn, "/images/linkedin.svg"),
               class: "h-8 w-8 inline-block my-2 mr-2"
-            ) %> Check out my LinkedIn
+            )} Check out my LinkedIn
           <% end %>
         </li>
       </ul>
     </p>
   </div>
   <div class="basis-1/4">
-    <%= img_tag(Routes.static_path(@conn, "/images/alanvardy.jpg"), class: "rounded") %>
+    {img_tag(Routes.static_path(@conn, "/images/alanvardy.jpg"), class: "rounded")}
   </div>
 </div>
 <h2 class="text-xl mt-6 mb-3 text-slate-400">Latest Post</h2>
 <div class="md:flex">
   <div class="basis-3/4">
-    <%= render(AlanVardyWeb.PostView, "_post.html", post: @latest_post, conn: @conn) %>
+    {render(AlanVardyWeb.PostView, "_post.html", post: @latest_post, conn: @conn)}
   </div>
   <div class="basis-1/2"></div>
 </div>
